@@ -1,0 +1,4 @@
+/node_modules
+/own-resources
+
+package-lock.json

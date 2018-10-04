@@ -1,15 +1,13 @@
 <template>
   <div class="">
-    <Slider></Slider>
+    <header></header>
+    <h1>index</h1>
   </div>
 </template>
 
 <script>
-import Slider from './Slider'
-
 export default {
-  name: 'HelloWorld',
-  components: {Slider},
+  name: 'index',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

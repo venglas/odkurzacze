@@ -1,7 +1,6 @@
 <template>
   <div class="">
-    <header></header>
-    <h1>index</h1>
+kasdas
   </div>
 </template>
 

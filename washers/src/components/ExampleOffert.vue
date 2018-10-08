@@ -26,8 +26,8 @@ export default {
   data () {
     return {
         exampleOffert: [
-            {name: 'odkurzacz przemysłowy karcher', img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum laudantium, placeat atque id, soluta cupiditate similique voluptatem reprehenderit odio eius vero amet fugiat doloribus molestias eligendi sunt repellat provident magni?'},
-            {name: 'odkurzacz puzzi', img: '../../static/img/odkurzacz-puzzi.jpg', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum laudantium, placeat atque id, soluta cupiditate similique voluptatem reprehenderit odio eius vero amet fugiat doloribus molestias eligendi sunt repellat provident magni?'}
+            {name: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1', img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
+            {name: 'ODKURZACZ  PIORĄCY PUZZI  10/1', img: '../../static/img/odkurzacz-puzzi.jpg', description: 'Dzięki bogatemu wyposażeniu urządzenie Puzzi można stosować zarówno do czyszczenia wykładzin dywanowych jak i tapicerki samochodowej, meblowej oraz podłóg twardych. Doskonale sprawdza się w hotelach, biurowcach, firmach zajmujących się przewozem osób. W zależności od stopnia zabrudzenia powierzchni może pracować w jednym lub w dwóch przejściach roboczych. Pozostawia jedynie niewielką wilgoć, dzięki czemu powierzchnię można użytkować w krótkim czasie po przeprowadzeniu prac czyszczących.'}
         ]
     }
   }
@@ -47,7 +47,7 @@ export default {
         width: 80%;
         margin: 0 auto;
         &--bottom{
-            background-color: darken(rgb(255, 255, 255), 6%)
+            // background-color: darken(rgb(255, 255, 255), 6%)
         }
         &__img{
             width: 25%;
@@ -59,9 +59,12 @@ export default {
             width: 65%;
             .title{
                 font-size: 3rem;
+                text-transform: uppercase;
+                margin: 1rem 0;
             }
             .description{
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                letter-spacing: 2px;
             }
             &--top{
                 float: right;

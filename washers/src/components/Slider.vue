@@ -2,7 +2,7 @@
 <div>
   <div class="phone-number">
     <img src="../../static/img/icons/phone-contact.png" alt="">
-    <span>numer telefonu</span>
+    <span title="kliknij po więcej szczegółów">numer telefonu</span>
   </div>
 
   <div class="slider">

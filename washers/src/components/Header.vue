@@ -38,7 +38,8 @@ export default {
     padding: 2.5rem 2rem;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1999;
 
     &__logo{
       img{

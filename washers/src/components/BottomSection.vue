@@ -35,6 +35,8 @@ export default {
     position: absolute;
     right: 5%;
     top: 45%;
+    color: #fff;
+    font-size: 1.8rem;
   }
   &__img{
     height: 100%;

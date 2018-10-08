@@ -37,7 +37,7 @@ export default {
 @import '../assets/scss/variables';
 
 .our-offert{
-    background: $yellow;
+    background-color: $yellow;
     width: 100%;
     height: 500px;
 

@@ -16,7 +16,6 @@
 <script>
 export default {
   name: 'OurOffert',
-//   props: [offert],
   data () {
     return {
         offert: [

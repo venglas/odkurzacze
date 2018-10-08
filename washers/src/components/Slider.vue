@@ -1,10 +1,18 @@
 <template>
-    <div class="slider">
+<div>
+  <div class="phone-number">
+    <img src="../../static/img/icons/phone-contact.png" alt="">
+    <span>numer telefonu</span>
+  </div>
+
+  <div class="slider">
       <div v-for="item in offert" class="slider__item">
         <p class="title">{{ item.description }}</p>
         <img :src="item.img" class="img">
       </div>
-    </div>
+  </div>
+</div>
+
 </template>
 
 <script>
@@ -34,6 +42,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  .phone-number{
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    background: yellow;
+    padding: .8rem 3rem;
+    font-size: 1.8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+    display: flex;
+    justify-content: space-between;
+    img{
+      padding: 0 1rem 0 2rem;
+    }
+    span{
+      margin-top: 3px;
+    }
+  }
   .slider{
     width: 100%;
     height: 45vh;
@@ -44,9 +69,10 @@ export default {
         position: absolute;
         top: 25%;
         z-index: 999;
-        color: red;
-        background-color: rgba(255, 255, 255, .75);
+        background-color: rgba(255, 255, 255, .7);
         padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
         // clip-path: polygon(0 0, 75% 0); // do it in next part of styling
       }
       .img{

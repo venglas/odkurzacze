@@ -24,3 +24,4 @@ externals:
 slick
 jquery
 flat-icon
+google fonts

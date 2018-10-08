@@ -3,7 +3,7 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <h1>logo</h1>
+      <img src="../../static/img/icons/logo.png" alt="logo odkurza-czary">
     </div>
 
     <nav class="header__navigation">
@@ -41,10 +41,16 @@ export default {
     background-color: rgba(255, 255, 255, .8);
 
     &__logo{
-      //logo styles probably here will be an image
+      img{
+        position: absolute;
+        top: -13px;
+        width: 14rem;
+        height: 9rem;
+      }
     }
 
     &__navigation{
+      font-size: 1.5rem;
       .list{
         list-style-type: none;
         text-transform: capitalize;

@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/scss/variables';
 * {
   padding: 0;
   margin: 0;
@@ -27,10 +28,11 @@ html {
 body{
   padding: 0;
   margin: 0;
+  font-family: $openSans;
 }
 #app {
   width: 100%;
   height: 100%;
-  background-color: lighten(gray, 10%);
+  background-color: rgb(68, 68, 68);
 }
 </style>

@@ -1,5 +1,7 @@
 <template>
   <article class="our-offert">
+    <h1 class="our-offert__title"> Poznaj naszą ofertę </h1>
+
     <div class="offert-box">
         <div v-for="item in offert" class="offert-box__item">
             <img :src="item.img" alt="" class="item-img">
@@ -41,7 +43,11 @@ export default {
     height: 400px;
     overflow-x: scroll;
     overflow-y: hidden;
-    padding: 1.5rem 1rem;
+    &__title{
+        font-size: 2.2rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
     .offert-box{
         display: flex;
         width: 200%; //set this property with calc of items count

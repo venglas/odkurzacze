@@ -2,8 +2,9 @@
   <div class="">
     <Slider></Slider>
 
-    <div class="section-under">
+    <div class="section-under"> 
       <h1>lorem ipsum</h1>
+      <button>lorem ipsum</button>
     </div>
 
     <OurOffert></OurOffert>
@@ -31,4 +32,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+.section-under{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 2.2rem;
+  color: #fff;
+  button{
+    background-color: yellow;
+    border: 0 transparent;
+    border-radius: 3px;
+    padding: 1rem 2.2rem;
+  }
+}
 </style>

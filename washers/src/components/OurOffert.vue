@@ -44,19 +44,22 @@ export default {
     overflow-x: scroll;
     overflow-y: hidden;
     &__title{
-        font-size: 2.2rem;
+        font-size: 3rem;
+        font-weight: 400;
         text-align: center;
-        padding: 2rem 0;
+        padding: 2.5rem 0;
     }
     .offert-box{
         display: flex;
-        width: 200%; //set this property with calc of items count
+        width: 100%; //set this property with calc of items count
         &__item{
             display: inline-block;
             width: calc(25% - 4rem);
             margin: 0 2rem;
             .item-img{
-                width: 100%; height: auto;
+                width: 100%;
+                height: 20rem;
+                max-height: 20rem;
             }
         }
 

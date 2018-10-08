@@ -118,6 +118,8 @@ export default {
           border: transparent;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, .75);
+          outline: none;
+          cursor: pointer;
           &:hover{
             background-color: rgba(255, 255, 255, 1);
           }

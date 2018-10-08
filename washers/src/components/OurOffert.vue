@@ -39,7 +39,7 @@ export default {
 .our-offert{
     background: $yellow;
     width: 100%;
-    height: 400px;
+    height: 500px;
 
     &__title{
         font-size: 3rem;
@@ -53,8 +53,10 @@ export default {
         overflow-y: hidden;
         white-space: nowrap;
         height: 78%;
+        margin: 3rem 0;
         &__item{
             display: inline-block;
+            vertical-align: top; //fix position of element
             width: calc(20% - 4rem);
             margin: 0 2rem;
             height: 100%;

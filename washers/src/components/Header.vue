@@ -1,19 +1,20 @@
-// When u scroll page header should have opacity, and when user have mouse on header opacity should be on 1
-
 <template>
   <header class="header">
     <div class="header__logo">
-      <img src="../../static/img/icons/logo.png" alt="logo odkurza-czary">
+      <img src="../../static/img/icons/logo.png" alt="logo odkurza-czary" class="logo-img">
     </div>
 
     <nav class="header__navigation">
+      <div class="mobile-menu" v-on:click="toggleMenu">
+        <img src="../../static/img/icons/mobile-menu.png" alt="mobile menu icon">
+      </div>
       <ul class="list">
-        <li class="list__item">start</li>
-        <li class="list__item">o nas</li>
-        <li class="list__item">oferta</li>
-        <li class="list__item">cennik</li>
-        <li class="list__item">galeria</li>
-        <li class="list__item">fb icon</li>
+        <li class="list__item"> <span>start</span></li>
+        <li class="list__item"> <span>o nas</span></li>
+        <li class="list__item"> <span>oferta</span></li>
+        <li class="list__item"> <span>cennik</span></li>
+        <li class="list__item"> <span>galeria</span></li>
+        <li class="list__item"> <span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></li>
       </ul>
     </nav>
   </header>
@@ -24,7 +25,24 @@ export default {
   name: 'headerComp',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      isOpen: false //mobile menu
+    }
+  },
+  methods: {
+    toggleMenu(){
+      if(!this.isOpen){
+        $('.list').css({height: '100%'});
+        $('.logo-img').css({width: '100%'});
+        $('.header__navigation').css({height: '100%'});
+
+        this.isOpen = true;
+      }else{
+        $('.list').css({height: '0'});
+        $('.logo-img').css({width: '12rem'});
+        $('.header__navigation').css({height: '6rem'});
+
+        this.isOpen = false;
+      }
     }
   }
 }
@@ -40,6 +58,9 @@ export default {
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 1);
     z-index: 1999;
+    @media(max-width: 425px){
+      padding: 1rem 0;
+    }
 
     &__logo{
       img{
@@ -47,18 +68,71 @@ export default {
         top: -13px;
         width: 14rem;
         height: 9rem;
+        @media(max-width: 425px){
+          width: 12rem;
+          height: auto;
+          transition: all ease 200ms;
+        }
+      }
+      @media(max-width: 425px){
+        position: absolute;
+        width: 100%;
+        margin: 0 auto;
       }
     }
 
     &__navigation{
+      transition: all ease 200ms;
+      .mobile-menu{
+        display: none;
+        position: absolute;
+        top: 1rem; right: 1.5rem;
+        img{
+          width: 4rem;
+        }
+        @media(max-width: 425px){
+          display: block;
+        }
+      }
       font-size: 1.5rem;
       .list{
         list-style-type: none;
         text-transform: capitalize;
+        height: 0;
+
         &__item{
           display: inline-block;
           &:not(:last-child){
             margin: 0 .8rem;
+          }
+          .fb-icon{
+            height: 2rem;
+          }
+        }
+      }
+      @media(max-width: 425px){
+        font-size: 4rem;
+        width: 100%;
+        height: 6rem;
+
+        .list{
+          width: fit-content;
+          margin: 0 auto;
+          margin-top: 22rem;
+          overflow: hidden;
+
+          &__item{
+            width: 100%;
+            margin: .5rem 0;
+
+            span{
+              margin: 0 auto;
+              display: block;
+              width: fit-content;
+            }
+            .fb-icon{
+              height: 4rem;
+            }
           }
         }
       }

@@ -39,10 +39,7 @@ export default {
 .our-offert{
     background-color: $yellow;
     width: 100%;
-    height: 500px;
-    @media(max-width: 1024px){
-        height: 550px;
-    }
+    padding-bottom: 2rem;
 
     &__title{
         font-size: 3rem;
@@ -69,7 +66,7 @@ export default {
             @media(max-width: 768px){
                 width: calc(35% - 4rem);
             }
-            @media(max-width: 768px){
+            @media(max-width: 425px){
                 width: calc(70% - 4rem);
             }
             @media(max-width: 375px){

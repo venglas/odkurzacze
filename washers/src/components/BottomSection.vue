@@ -2,7 +2,7 @@
   <article class="bottom-section">
       
       <div class="content">
-        <img src="../../static/img/dostawczy.jpg" alt="auto dostawcze" class="content__img">
+        <!-- <img src="../../static/img/dostawczy.jpg" alt="auto dostawcze" class="content__img"> -->
         <h2 class="content__title">Dojazd do klienta na terenie całego Śląska</h2>
       </div>
 

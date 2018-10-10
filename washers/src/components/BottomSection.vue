@@ -2,7 +2,7 @@
   <article class="bottom-section">
       
       <div class="content">
-        <!-- <img src="../../static/img/dostawczy.jpg" alt="auto dostawcze" class="content__img"> -->
+        <img src="../../static/img/car.png" alt="auto dostawcze" class="content__img">
         <h2 class="content__title">Dojazd do klienta na terenie całego Śląska</h2>
       </div>
 
@@ -37,14 +37,30 @@ export default {
     top: 45%;
     color: #fff;
     font-size: 1.8rem;
+    @media(max-width: 768px){
+      top: 25%;
+    }
+    @media(max-width: 425px){
+      right: 0;
+      text-align: center;
+      width: 100%;
+    }
+    @media(max-width: 375px){
+      font-size: 1.5rem;
+    }
   }
   &__img{
     height: 100%;
     width: auto;
     margin-left: 5%;
     position: absolute;
-    top: 30%;
-
+    top: 20%;
+    @media(max-width: 425px){
+      max-width: 100%;
+       margin-left: 0;
+      top: 45%;
+      height: auto;
+    }
   }
 }
 .spacer{

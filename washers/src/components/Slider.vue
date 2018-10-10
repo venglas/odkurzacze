@@ -62,9 +62,13 @@ export default {
   .slider{
     width: 100%;
     height: 45vh;
+    @media(max-width: 375px){
+      height: 30vh;
+    }
     &__item{
       width: 100%;
       height: 45vh;
+      background-size: cover;
       .title{
         position: absolute;
         top: 25%;
@@ -77,6 +81,7 @@ export default {
       }
       .img{
         max-height: 100%;
+        height: 100%;
         width: 100%;
       }
     }

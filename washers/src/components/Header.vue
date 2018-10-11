@@ -51,6 +51,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .header {
+    height: 8rem;
     position: sticky;
     top: 0;
     padding: 2.5rem 2rem;

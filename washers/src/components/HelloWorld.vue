@@ -3,8 +3,10 @@
     <Slider></Slider>
 
     <div class="section-under"> 
-      <h1>lorem ipsum</h1>
-      <button>lorem ipsum</button>
+      <h1>Odwiedź nasz profil na facebooku</h1>
+      <button>
+        <a href="https://www.facebook.com/" class="button-link">Odkurza-czary</a>
+      </button>
     </div>
 
     <OurOffert></OurOffert>
@@ -44,6 +46,11 @@ export default {
     border: 0 transparent;
     border-radius: 3px;
     padding: 1rem 2.2rem;
+  }
+  .button-link{
+    text-decoration: none;;
+    color: #000;
+    font-weight: 600;
   }
 }
 </style>

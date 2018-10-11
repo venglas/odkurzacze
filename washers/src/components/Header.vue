@@ -5,7 +5,7 @@
     </div>
 
     <nav class="header__navigation">
-      <div class="mobile-menu" @click="toggleMenu">
+      <div class="mobile-menu" v-on:click="toggleMenu">
         <img src="../../static/img/icons/mobile-menu.png" alt="mobile menu icon">
       </div>
       <ul class="list">
@@ -44,38 +44,38 @@ export default {
         this.isOpen = false;
       }
     },
-    
+
     goTo(where){
       switch(where){
         case 'start':
-          this.$router.push('/')
+          this.$router.push('/');
         break;
 
         case 'about-us':
-          this.$router.push('/O-nas')
+          this.$router.push('/O-nas');
         break;
 
         case 'offert':
-          this.$router.push('/Oferta')
+          this.$router.push('/Oferta');
         break;
 
         case 'price-list':
-          this.$router.push('/Cennik')
+          this.$router.push('/Cennik');
         break;
 
         case 'gallery':
-          this.$router.push('/Galeria')
+          this.$router.push('/Galeria');
         break;
       }
     }
-  },
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .header {
-    height: 8rem;
+    // height: 8rem;
     position: sticky;
     top: 0;
     padding: 2.5rem 2rem;
@@ -126,7 +126,6 @@ export default {
         height: 0;
 
         &__item{
-          cursor: pointer;
           display: inline-block;
           &:not(:last-child){
             margin: 0 .8rem;
@@ -144,7 +143,7 @@ export default {
         .list{
           width: fit-content;
           margin: 0 auto;
-          margin-top: 22rem;
+          margin-top: 25rem;
           overflow: hidden;
 
           &__item{

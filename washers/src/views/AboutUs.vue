@@ -1,6 +1,20 @@
 <template>
   <div class="">
-      ABOUT US
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+      <h1>elo</h1>
+
+      <h1>elo</h1>
+      <h1>elo</h1>
+      
   </div>
 </template>
 

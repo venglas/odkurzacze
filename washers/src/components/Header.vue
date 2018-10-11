@@ -46,15 +46,6 @@ export default {
     },
     
     goTo(where){
-
-      // @click="goTo('about-us')">
-      // @click="goTo('offert')"> <span
-      // @click="goTo('price-list')">
-      // @click="goTo('gallery')"> <span
-
-
-
-
       switch(where){
         case 'start':
           this.$router.push('/')
@@ -135,6 +126,7 @@ export default {
         height: 0;
 
         &__item{
+          cursor: pointer;
           display: inline-block;
           &:not(:last-child){
             margin: 0 .8rem;

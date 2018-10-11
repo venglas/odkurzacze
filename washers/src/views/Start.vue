@@ -5,7 +5,7 @@
     <div class="section-under"> 
       <h1>Odwiedź nasz profil na facebooku</h1>
       <button>
-        <a href="https://www.facebook.com/" class="button-link">Odkurza-czary</a>
+        <a href="https://www.facebook.com/" target="_blank" class="button-link">Odkurza-czary</a>
       </button>
     </div>
 
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import Slider from './Slider'
-import OurOffert from './OurOffert'
-import ExampleOffert from './ExampleOffert'
-import BottomSection from './BottomSection'
+import Slider from '../components/Slider'
+import OurOffert from '../components/OurOffert'
+import ExampleOffert from '../components/ExampleOffert'
+import BottomSection from '../components/BottomSection'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Start',
   components: {Slider, OurOffert, ExampleOffert, BottomSection},
   data () {
     return {
@@ -41,6 +41,12 @@ export default {
   height: 80px;
   padding: 0 2.2rem;
   color: #fff;
+  @media(max-width: 425px){
+    font-size: .7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2.2rem;
+  }
   button{
     background-color: yellow;
     border: 0 transparent;

@@ -5,16 +5,16 @@
     </div>
 
     <nav class="header__navigation">
-      <div class="mobile-menu" v-on:click="toggleMenu">
+      <div class="mobile-menu" @click="toggleMenu">
         <img src="../../static/img/icons/mobile-menu.png" alt="mobile menu icon">
       </div>
       <ul class="list">
-        <li class="list__item"> <span>start</span></li>
+        <li class="list__item" @click="goTo('start')"> <span>start</span></li>
         <li class="list__item"> <span>o nas</span></li>
         <li class="list__item"> <span>oferta</span></li>
         <li class="list__item"> <span>cennik</span></li>
         <li class="list__item"> <span>galeria</span></li>
-        <li class="list__item"> <span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></li>
+        <li class="list__item"> <a href="https://www.facebook.com/" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
       </ul>
     </nav>
   </header>
@@ -43,8 +43,16 @@ export default {
 
         this.isOpen = false;
       }
+    },
+    
+    goTo(where){
+      switch(where){
+        case 'start':
+          this.$router.push('/')
+        break;
+      }
     }
-  }
+  },
 }
 </script>
 

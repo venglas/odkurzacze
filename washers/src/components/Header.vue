@@ -28,6 +28,7 @@ export default {
       isOpen: false //mobile menu
     }
   },
+
   methods: {
     toggleMenu(){
       if(!this.isOpen){
@@ -67,6 +68,13 @@ export default {
           this.$router.push('/Galeria');
         break;
       }
+
+      //You can it better bro I believe
+      $('.list').css({height: '0'});
+      $('.logo-img').css({width: '12rem'});
+      $('.header__navigation').css({height: '6rem'});
+
+      this.isOpen = false;
     }
   }
 }

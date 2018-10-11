@@ -25,9 +25,7 @@ export default {
   name: 'Start',
   components: {Slider, OurOffert, ExampleOffert, BottomSection},
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return {}
   }
 }
 </script>

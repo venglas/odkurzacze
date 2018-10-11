@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Start from '@/views/Start'
-import index from '@/components/index'
+import AboutUs from '@/views/AboutUs'
 
 Vue.use(Router)
 
@@ -15,9 +15,9 @@ export default new Router({
     },
 
     {
-      path: '/index',
-      name: 'index',
-      component: index
+      path: '/O-nas',
+      name: 'AboutUs',
+      component: AboutUs
     }
   ]
 })

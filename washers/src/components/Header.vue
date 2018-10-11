@@ -10,10 +10,10 @@
       </div>
       <ul class="list">
         <li class="list__item" @click="goTo('start')"> <span>start</span></li>
-        <li class="list__item"> <span>o nas</span></li>
-        <li class="list__item"> <span>oferta</span></li>
-        <li class="list__item"> <span>cennik</span></li>
-        <li class="list__item"> <span>galeria</span></li>
+        <li class="list__item" @click="goTo('about-us')"> <span>o nas</span></li>
+        <li class="list__item" @click="goTo('offert')"> <span>oferta</span></li>
+        <li class="list__item" @click="goTo('price-list')"> <span>cennik</span></li>
+        <li class="list__item" @click="goTo('gallery')"> <span>galeria</span></li>
         <li class="list__item"> <a href="https://www.facebook.com/" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
       </ul>
     </nav>
@@ -46,9 +46,34 @@ export default {
     },
     
     goTo(where){
+
+      // @click="goTo('about-us')">
+      // @click="goTo('offert')"> <span
+      // @click="goTo('price-list')">
+      // @click="goTo('gallery')"> <span
+
+
+
+
       switch(where){
         case 'start':
           this.$router.push('/')
+        break;
+
+        case 'about-us':
+          this.$router.push('/O-nas')
+        break;
+
+        case 'offert':
+          this.$router.push('/Oferta')
+        break;
+
+        case 'price-list':
+          this.$router.push('/Cennik')
+        break;
+
+        case 'gallery':
+          this.$router.push('/Galeria')
         break;
       }
     }

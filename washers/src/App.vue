@@ -5,15 +5,20 @@
     <transition name="fade">
       <router-view/>
     </transition>
+
+    <BottomSection></BottomSection>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import BottomSection from './components/BottomSection'
+
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    BottomSection
   }
 }
 </script>

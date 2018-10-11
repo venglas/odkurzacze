@@ -11,7 +11,6 @@
 
     <OurOffert></OurOffert>
     <ExampleOffert></ExampleOffert>
-    <BottomSection></BottomSection>
   </div>
 </template>
 

@@ -60,6 +60,8 @@ export default {
 @import '../assets/scss/variables';
 
 .full-offert{
+    min-height: calc(100vh - 8vh - 380px);
+
     width: 80%;
     margin: 0 auto;
     padding: 3rem 0;
@@ -67,11 +69,23 @@ export default {
     font-size: 1.3rem;
     line-height: 1.5;
     letter-spacing: 1.5px;
+    @media(max-width: 425px){
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
     &__intro{
         text-align: center;
         padding-bottom: 3.5rem;
         h1{
             padding: 1.2rem 0;
+            @media(max-width: 768px){
+                padding: 2rem 0;
+            }
+        }
+        h2{
+            @media(max-width: 768px){
+                padding: 1.2rem 0;
+            } 
         }
     }
 
@@ -99,6 +113,9 @@ export default {
     .info-under-list{
         padding: 2.5rem 0;
         text-align: center;
+        @media(max-width: 425px){
+            font-size: 1.7rem;
+        }
     }
 
 }

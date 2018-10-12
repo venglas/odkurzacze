@@ -70,11 +70,13 @@ export default {
       }
 
       //You can it better bro I believe
-      $('.list').css({height: '0'});
-      $('.logo-img').css({width: '12rem'});
-      $('.header__navigation').css({height: '6rem'});
+      if(window.innerWidth <= 425){
+        $('.list').css({height: '0'});
+        $('.logo-img').css({width: '12rem'});
+        $('.header__navigation').css({height: '6rem'});
 
-      this.isOpen = false;
+        this.isOpen = false;
+      }
     }
   }
 }
@@ -91,6 +93,9 @@ export default {
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 1);
     z-index: 1999;
+    @media(min-width: 426px){
+      height: 8rem;
+    }
     @media(max-width: 425px){
       padding: 1rem 0;
     }

@@ -4,9 +4,17 @@ import Router from 'vue-router'
 import Start from '@/views/Start'
 import AboutUs from '@/views/AboutUs'
 import Offert from '@/views/Offert'
+import PriceList from '@/views/PriceList'
+import VueRouter from 'vue-router';
 
 
 Vue.use(Router)
+
+//remove hash from URL
+// const router = new VueRouter({
+//   mode: 'history',
+//   history: true
+// })
 
 export default new Router({
   routes: [
@@ -26,6 +34,12 @@ export default new Router({
       path: '/Oferta',
       name: 'Offert',
       component: Offert
+    },
+
+    {
+      path: '/Cennik',
+      name: 'PriceList',
+      component: PriceList
     }
   ]
 })

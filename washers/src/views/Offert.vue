@@ -14,7 +14,24 @@
                 <p class="item-title">Odkurzanie</p>
                 <p class="item-description">Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz </p>
             </li>
+
+            <li class="list__item">
+                <p class="item-title">Pranie</p>
+                <p class="item-description">Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.</p>
+            </li>
+
+            <li class="list__item">
+                <p class="item-title">Suszenie</p>
+                <p class="item-description">Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!</p>
+            </li>
+
+            <li class="list__item">
+                <p class="item-title">Suszenie</p>
+                <p class="item-description">Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!</p>
+            </li>
         </ul>
+
+        <h3 class="info-under-list">Czas prania i suszenia to około od 3 do 5 godzin</h3>
     </div>
 
   </article>
@@ -43,15 +60,45 @@ export default {
 @import '../assets/scss/variables';
 
 .full-offert{
-    &__intro{}
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    &__intro{
+        text-align: center;
+        padding-bottom: 3.5rem;
+        h1{
+            padding: 1.2rem 0;
+        }
+    }
 
     &__offert{
-        .title{}
-        .list{
-            list-style-type: circle;
-            margin-left: 2rem; //for test
-            &__item{}
+        .title{
+            padding: 1.5rem 0;
         }
+        .list{
+            list-style-type: dots;
+            margin-left: 2rem; //for test
+            font-size: 1.4rem;
+            &__item{
+                padding: 1.5rem 0;
+                .item-title{
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+                .item-description{
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+    
+    .info-under-list{
+        padding: 2.5rem 0;
+        text-align: center;
     }
 
 }

@@ -139,6 +139,7 @@ export default {
         height: 0;
 
         &__item{
+          cursor: pointer;
           display: inline-block;
           &:not(:last-child){
             margin: 0 .8rem;

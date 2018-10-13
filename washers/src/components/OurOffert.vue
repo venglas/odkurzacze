@@ -3,7 +3,7 @@
     <h1 class="our-offert__title"> Poznaj naszą ofertę </h1>
 
     <div class="offert-box">
-        <div v-for="item in offert" class="offert-box__item" title="Kliknij aby wyświetlić szczegóły">
+        <div v-for="item in offert" @click="showModal(item.id)" :id="'box'+item.id" class="offert-box__item" title="Kliknij aby wyświetlić szczegóły">
             <img :src="item.img" alt="" class="item-img">
             <div class="item-title">
                 <h2>{{item.title}}</h2>
@@ -18,6 +18,7 @@
                 <h2>{{ modal.title }}</h2>
                 <h3>{{ modal.subtitle }}</h3>
                 <p>{{ modal.description }}</p>
+                <p v-html="modal.subDescription">{{ modal.subDescription }}</p>
             </div>
 
             <p class="offert-title">{{ modal.offertCaption }}</p>
@@ -29,14 +30,14 @@
                 </li>
             </u>
 
-            <h3>W ramach zakupu usługi gwarantujemy chemię oraz sprzęt niezbędny do sprzątania.</h3>
+            <h3 v-if="modal.id == 1">W ramach zakupu usługi gwarantujemy chemię oraz sprzęt niezbędny do sprzątania.</h3>
 
             <div class="info-item">
                 <img :src="modal.iconTime" alt="calendar icon" class="info-item__photo">
                 <p class="info-item__description">{{ modal.time }}</p>
             </div>
 
-            <div class="info-item">
+            <div class="info-item" v-if="modal.info1 != ''">
                 <img :src="modal.iconOrder" alt="order icon" class="info-item__photo">
                 <p class="info-item__description">{{ modal.info1 }}</p>
             </div>
@@ -114,16 +115,112 @@ export default {
                 ],
                 ifno2: 'Uwaga: do ceny należy doliczyć ustawową stawkę VAT w wysokości 23%/nie jesteśmy płatnikiem VAT'
             },
-            // {id: 2, img: '../../static/img/kaf2.png', title: 'PRANIE DYWANÓW I WYKŁADZIN', description: 'nnowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy.'},
-            // {id: 3, img: '../../static/img/kaf3.png', title: 'PRANIE TAPICERKI MEBLOWEJ', description: ''},
-            // {id: 4, img: '../../static/img/kaf4.png', title: 'WYPOŻYCZALNIA KARCHER', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
+
+            {
+                id: 2, img: '../../static/img/kaf2.png',
+                title: 'Pranie dywanów i wykładzin',
+                subtitle: 'Ciepły, miękki i czysty dywan!',
+                description: 'Czysty i ciepły dom to nie tylko lśniące okna, meble, sofa ale także dywan czy wykładzina. Codzienne użytkowanie zostawia po sobie bardzo widoczne, denerwujące plamy i ślady. Mamy na to skuteczny i wypróbowany sposób, skorzystaj i Ty z naszego doświadczenia!',
+                subDescription: 'Wypożyczymy, przyjedziemy i wypierzemy za Ciebie.',
+                offertCaption: 'Cennik prania dywanów i wykładzin:',
+                offertList: [
+                    'Sztuczne od 5 zł /m2',
+                    'Wełniane od 6zł',
+                    'SHAGGY tzw. Włochacze od 7 zł',
+                    'wykładzina do 20 m2 od 5 zł za m2',
+                    'wykładzina powyżej 20m2 od 4 zł za m2',
+                    'wykładzina Ponad 100m i stałe zlecenia cena indywidualna'
+                ],
+                iconTime: '../../static/img/icons/time-icon.png',
+                iconOrder: '../../static/img/icons/order-icon.png',
+                iconContact: '../../static/img/icons/contact-icon.png',
+                iconPrice: '../../static/img/icons/money-icon.png',
+                time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
+                info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
+                price: 'Cena jest zależna od czyszczonej powierzchni. W przypadku biur, obiektów usługowych i innych firm, które potrzebują regularnych usług prania wykładzin i dywanów zapraszamy do kontaktu telefonicznego. Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.',
+                windowsClean: [],
+                ifno2: 'Aby dowiedzieć się więcej na temat sprzętu oraz techniki czyszczenia wykorzystywanej przez nasza firmę zapraszamy do zakładki sprzęt'
+            },
+
+            {
+                id: 3, img: '../../static/img/kaf3.png',
+                title: 'Pranie tapicerki meblowej',
+                subtitle: 'Wypoczynek i relaks!',
+                description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. Na proces czyszczenia składa się:',
+                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, <br /> pranie zasadnicze odkurzaczem ekstrakcyjnym`,
+                offertCaption: 'Cennik prania dywanów i wykładzin:',
+                offertList: [
+                    'Poduchy meblowe 10 – 15 zł',
+                    'Krzesła siedzisko 10 – 15 zł',
+                    'Krzesło: siedzisko + oparcie 15 – 25 zł',
+                    'Pufy meblowe I osobowe 15 – 25 zł',
+                    'Fotele biurowe 15 – 25 zł',
+                    'Fotele wypoczynkowe 60 – 80 zł',
+                    'Narożniki kuchenne 70 – 100 zł',
+                    'Wersalki / kanapy dziecięce 70 – 100 zł',
+                    'Kanapy II osobowe 120 – 150 zł',
+                    'Kanapy III osobowe 140 – 170 zł',
+                    'Kanapy (narożniki) IV osobowe 150 – 190 zł',
+                    'Kanapy (narożniki) V osobowe 180 – 200 zł',
+                    'Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.'
+                ],
+                iconTime: '../../static/img/icons/time-icon.png',
+                iconOrder: '../../static/img/icons/order-icon.png',
+                iconContact: '../../static/img/icons/contact-icon.png',
+                iconPrice: '../../static/img/icons/money-icon.png',
+                time: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem dogodnego terminu.',
+                info1: '',
+                price: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania.',
+                windowsClean: [],
+                ifno2: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania.'
+            },
+
+            {
+                id: 4, img: '../../static/img/kaf4.png',
+                title: 'Wypożyczalnia Karcher',
+            },
         ]
     }
   },
   methods: {
-    closeModal(which){
+    showModal(which){
+        $('body').css({overflow: 'hidden'});
+
         switch(which){
             case 1:
+                $('#modal'+which).css({display: 'block'})
+            break;
+
+            case 2:
+                $('#modal'+which).css({display: 'block'})
+            break;
+
+            case 3:
+                $('#modal'+which).css({display: 'block'})
+            break;
+
+            case 4:
+                this.$router.push('/Cennik')
+            break;
+        }
+    },
+    closeModal(which){
+        $('body').css({overflow: 'scroll'});
+
+        switch(which){
+            case 1:
+                $('#modal'+which).css({display: 'none'})
+            break;
+        }
+
+        switch(which){
+            case 2:
+                $('#modal'+which).css({display: 'none'})
+            break;
+        }
+
+        switch(which){
+            case 3:
                 $('#modal'+which).css({display: 'none'})
             break;
         }
@@ -207,7 +304,7 @@ export default {
 }
 
 .info-modal{
-    // display: none;
+    display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -218,6 +315,7 @@ export default {
     padding: 5rem;
     color: #fff;
     font-size: 1.5rem;
+    white-space: normal;
 
     .close-icon{
         position: absolute;

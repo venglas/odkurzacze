@@ -3,11 +3,49 @@
     <h1 class="our-offert__title"> Poznaj naszą ofertę </h1>
 
     <div class="offert-box">
-        <div v-for="item in offert" class="offert-box__item">
+        <div v-for="item in offert" class="offert-box__item" title="Kliknij aby wyświetlić szczegóły">
             <img :src="item.img" alt="" class="item-img">
             <div class="item-title">
                 <h2>{{item.title}}</h2>
             </div>
+        </div>
+
+        <div class="info-modal" v-for="modal in offert">
+            <h2>{{ modal.title }}</h2>
+            <h3>{{ modal.subtitle }}</h3>
+            <p>{{ modal.description }}</p>
+            <p>{{ modal.offertCaption }}</p>
+
+            <u>
+                <li v-for="modalList in modal.offertList">
+                    {{ modalList }}
+                </li>
+            </u>
+
+            <h3>W ramach zakupu usługi gwarantujemy chemię oraz sprzęt niezbędny do sprzątania.</h3>
+
+            <p>
+                <img :src="modal.iconTime" alt="calendar icon">
+                <p>{{ modal.time }}</p>
+            </p>
+
+            <p>
+                <img :src="modal.iconOrder" alt="order icon">
+                {{ modal.info1 }}
+            </p>
+
+            <div>
+                <p>cennik:</p> 
+                {{modal.price}}
+            </div>
+
+            <ul>
+                <li v-for="modalList2 in modal.windowsClean">
+                    {{modalList2}}
+                </li>
+            </ul>
+
+            <h3>{{ info2 }}</h3>
         </div>
     </div>
   </article>
@@ -18,11 +56,47 @@ export default {
   name: 'OurOffert',
   data () {
     return {
+        telephone: '694-045-198',
+        email: 'example@gmail.com',
         offert: [
-            {id: 1, img: '../../static/img/kaf1.png', title: 'SPRZĄTANIE BIUR', description: 'Zapomnij o wielogodzinnych zmaganiach z myciem okien! Chcesz szybko umyć okna, lustra lub kafelki? To urządzenie jest stworzony z myślą o Tobie. Myjka WV 2 Premium BLACK przeznaczony jest do mycia wszelkiego rodzaju powierzchni szklanych, luster, a także fliz w domu.'},
-            {id: 2, img: '../../static/img/kaf2.png', title: 'PRANIE DYWANÓW I WYKŁADZIN', description: 'nnowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy.'},
-            {id: 3, img: '../../static/img/kaf3.png', title: 'PRANIE TAPICERKI MEBLOWEJ', description: ''},
-            {id: 4, img: '../../static/img/kaf4.png', title: 'WYPOŻYCZALNIA KARCHER', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
+            {
+                id: 1, img: '../../static/img/kaf1.png',
+                title: 'SPRZĄTANIE BIUR',
+                subtitle: 'Czyste biuro czysta przyjemność !',
+                description: 'Zbliża się koniec pracy a na biurku w dalszym ciągu piętrzą się dokumenty, kuchnia pełna brudnych naczyń, pełne kosze, zadeptana wykładzina i zamiast cieszyć się wolnym popołudniem martwisz się ile jeszcze czasu musisz poświęcić na uporządkowanie biura.',
+                subDescription: 'Skontaktuj się z nami – chętnie zadbamy o porządek w Twoim biurze i domu.',
+                offertCaption: 'Przykładowa usługa sprzątania biura obejmuje:',
+                offertList: [
+                    'sprzątanie powierzchni biurka',
+                    'odkurzanie wykładzin',
+                    'opróżnianie koszy',
+                    'wycieranie półek, szaf',
+                    'mycie podłogi',
+                    'sprzątanie pomieszczeń socjalnych i WC,',
+                    'wycieranie grzejników oświetlenia, itp.',
+                    'okresowe mycie pionowych i poziomych powierzchni mebli i drzwi',
+                    'okresowe wycieranie koszy oraz stelaży foteli i biurek',
+                    'okresowe wycieranie kurzu z miejsc usytuowanych najwyżej (górne powierzchnie wysokich szaf, ościeżnice drzwi i okien, górne powierzchnie drzwi',
+                    'mycie okien (raz na 6 miesięcy, wycena indywidualna)'
+                ],
+                iconTime: '../../static/img/icons/time-icon.png',
+                iconOrder: '../../static/img/icons/order-icon.png',
+                time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
+                info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
+                price: 'godzina sprzątania 35zł',
+                windowsClean: [
+                    'okno jednoskrzydłowe od 10 zł',
+                    'okno dwuskrzydłowe od 15 zł',
+                    'okno trzyskrzydłowe od 25 zł',
+                    'drzwi balkonowe od 25 zł',
+                    'drewniane starego typu – rozkręcane, podwójne wycena indywidualna',
+                    'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem sprzątania.'
+                ],
+                ifno2: 'Uwaga: do ceny należy doliczyć ustawową stawkę VAT w wysokości 23%/nie jesteśmy płatnikiem VAT'
+            },
+            // {id: 2, img: '../../static/img/kaf2.png', title: 'PRANIE DYWANÓW I WYKŁADZIN', description: 'nnowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy.'},
+            // {id: 3, img: '../../static/img/kaf3.png', title: 'PRANIE TAPICERKI MEBLOWEJ', description: ''},
+            // {id: 4, img: '../../static/img/kaf4.png', title: 'WYPOŻYCZALNIA KARCHER', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
         ]
     }
   }
@@ -36,7 +110,7 @@ export default {
 .our-offert{
     background-color: $yellow;
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
 
     &__title{
         font-size: 3rem;
@@ -48,7 +122,7 @@ export default {
     .offert-box{
         margin: 3rem auto;
         white-space: nowrap;
-        height: 78%;
+        // height: 100%;
         width: 80%;
         margin: 0 auto;
         @media(max-width: 1024px){
@@ -67,6 +141,7 @@ export default {
             margin: 0 2rem;
             height: 100%;
             position: relative;
+            cursor: pointer;
             @media(max-width: 1024px){
                 width: calc(25% - 4rem);
             }
@@ -100,6 +175,18 @@ export default {
             }
         }
     }
+}
+
+.info-modal{
+    // display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(68, 68, 68);
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    padding: 5rem;
 }
 
 </style>

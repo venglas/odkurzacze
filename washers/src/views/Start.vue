@@ -5,7 +5,7 @@
     <div class="section-under"> 
       <h1>Odwiedź nasz profil na facebooku</h1>
       <button>
-        <a href="https://www.facebook.com/" target="_blank" class="button-link">Odkurza-czary</a>
+        <a href="https://www.facebook.com/Odkurza-Czary-274633909844583/?modal=admin_todo_tour" target="_blank" class="button-link">Odkurza-czary</a>
       </button>
     </div>
 

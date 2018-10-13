@@ -7,7 +7,7 @@
 
   <div class="phone-number" @click="showContact">
     <img src="../../static/img/icons/phone-contact.png" alt="">
-    <span title="kliknij po więcej szczegółów">numer telefonu</span>
+    <a href="tel:694045198">694-045-198</a>
   </div>
 
   <div class="slider">
@@ -65,8 +65,10 @@ export default {
     img{
       padding: 0 1rem 0 2rem;
     }
-    span{
-      margin-top: 3px;
+    a{
+      margin-top: .3rem;
+      text-decoration: none;
+      color: #000;
     }
   }
   .slider{

@@ -5,6 +5,7 @@ import Start from '@/views/Start'
 import AboutUs from '@/views/AboutUs'
 import Offert from '@/views/Offert'
 import PriceList from '@/views/PriceList'
+import Contact from '@/views/Contact'
 import VueRouter from 'vue-router';
 
 
@@ -40,6 +41,12 @@ export default new Router({
       path: '/Cennik',
       name: 'PriceList',
       component: PriceList
+    },
+
+    {
+      path: '/Kontakt',
+      name: 'Contact',
+      component: Contact
     }
   ]
 })

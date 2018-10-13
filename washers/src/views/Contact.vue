@@ -1,0 +1,104 @@
+<template>
+  <div class="about-us">
+      <div class="about-us__content">
+        <h1>Skontaktuj się z nami!</h1>
+
+        <h2 class="animation-1">
+            Z przyjemnością odpowiemy na wszystkie Państwa pytania, potwierdzimy dostępność
+            odkurzacza piorącego bądź umówimy się na wykonanie usługi w dogodnym dla Państwa
+            terminie.
+        </h2>
+
+        <h2 class="animation-2">
+            Naszym stałym Klientom dziękujemy za zaufanie jakim nas obdarzyli, a nowych Klientów serdecznie
+            witamy w stale powiększającym się gronie zadowolonych z naszych usług odbiorców!
+        </h2>
+
+        <h2 class="animation-3">
+            Dziękujemy za poświęcony czas i zapraszamy do skorzystania z naszej oferty.
+        </h2>
+
+        <h2 class="animation-1">ODKURZA-CZARY</h2>
+        <h2 class="animation-2">Ul. Powstańców 8A</h2>
+        <h2 class="animation-3">
+            <p>44-193 Knurów</p>
+            <p>Tel. 694-045-198</p>
+            <p>Mail. biuro@odkurza-czary.pl</p>
+        </h2>
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Contact',
+  data () {
+    return {}
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss" scoped>
+@mixin animation-text($anim-delay){
+    animation-name: fade-in-text;
+    animation-delay: $anim-delay;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.about-us{
+    text-align: center;
+    padding: 5rem;
+    min-height: calc(100vh - 8vh - 380px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content{
+        line-height: 2;
+        letter-spacing: 2px;
+        h1, h2{
+            color: #fff;
+            opacity: 0;
+        }
+        h1{
+            font-size: 5rem;
+            @include animation-text(1000ms);
+
+            @media(max-width: 1440px){
+                font-size: 3.5rem;
+            }
+        }
+        h2{
+            font-size: 3rem;
+            @media(max-width: 1440px){
+                font-size: 2rem;
+            }
+
+            @media(max-width: 768px){
+                font-size: 1.7rem;
+            }
+
+            @media(max-width: 425px){
+                font-size: 1.3rem;
+            }
+        }
+
+        .animation-1{
+           @include animation-text(2000ms);
+        }
+        .animation-2{
+           @include animation-text(3000ms);
+        }
+        .animation-3{
+           @include animation-text(4000ms);
+        }
+
+        @keyframes fade-in-text {
+            0%{opacity: 0}
+            100%{opacity: 1} 
+        }
+    }
+}
+</style>

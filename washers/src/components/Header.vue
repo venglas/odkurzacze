@@ -13,6 +13,7 @@
         <li class="list__item" @click="goTo('about-us')"> <span>o nas</span></li>
         <li class="list__item" @click="goTo('offert')"> <span>oferta</span></li>
         <li class="list__item" @click="goTo('price-list')"> <span>cennik</span></li>
+        <li class="list__item" @click="goTo('contact')"> <span>kontakt</span></li>
         <li class="list__item" @click="goTo('gallery')"> <span>galeria</span></li>
         <li class="list__item"> <a href="https://www.facebook.com/Odkurza-Czary-274633909844583/?modal=admin_todo_tour" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
       </ul>
@@ -62,6 +63,10 @@ export default {
 
         case 'price-list':
           this.$router.push('/Cennik');
+        break;
+
+        case 'contact':
+          this.$router.push('/Kontakt');
         break;
 
         case 'gallery':

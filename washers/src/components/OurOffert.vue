@@ -10,6 +10,7 @@
             </div>
         </div>
 
+        <!-- modal should be in new component -->
         <div class="info-modal" v-for="modal in offert" :id="'modal'+modal.id">
 
             <img :src="closeIcon" alt="close icon" @click="closeModal(modal.id)" class="close-icon">
@@ -200,12 +201,13 @@ export default {
             break;
 
             case 4:
-                this.$router.push('/Cennik')
+                this.$router.push('/Cennik');
+                $('body').css({overflowY: 'scroll'});
             break;
         }
     },
     closeModal(which){
-        $('body').css({overflow: 'scroll'});
+        $('body').css({overflowY: 'scroll'});
 
         switch(which){
             case 1:

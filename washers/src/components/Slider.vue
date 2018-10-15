@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       offert: [
-        {id: 1, img: '../../static/img/slider/slide1.jpg', description: 'description of an item!'},
+        // {id: 1, img: '../../static/img/slider/slide1.jpg', description: 'description of an item!'},
         {id: 2, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
         {id: 3, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
       ]
@@ -73,13 +73,13 @@ export default {
   }
   .slider{
     width: 100%;
-    height: 45vh;
+    height: 65vh;
     @media(max-width: 375px){
       height: 30vh;
     }
     &__item{
       width: 100%;
-      height: 45vh;
+      height: 65vh;
       background-size: cover;
       .title{
         position: absolute;

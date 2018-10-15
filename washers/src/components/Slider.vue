@@ -110,6 +110,7 @@ export default {
       transform: translateY(-50%);
       background-color: transparent;
       border: none;
+      cursor: pointer;
     }
     .slick-prev{
       left: 2rem;

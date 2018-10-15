@@ -26,7 +26,20 @@ export default {
   name: 'headerComp',
   data () {
     return {
-      isOpen: false //mobile menu
+      isOpen: false, //mobile menu
+      activeMenuItemStyle: {
+        fontSize: '1.7rem', 
+        fontWeight: '600',
+        textShadow: '0 0 35px rgba(0, 0, 0, .5)',
+        textDecoration: 'underline'
+      },
+      unactiveMenuItemStyle: {
+        fontSize: '1.5rem',
+        fontWeight: '400',
+        textShadow: 'none',
+        textDecoration: 'none'
+      },
+      actualLocation: 'start'
     }
   },
 
@@ -48,29 +61,43 @@ export default {
     },
 
     goTo(where){
+      this.actualLocation = where;
+
       switch(where){
         case 'start':
           this.$router.push('/');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(1)').css(this.activeMenuItemStyle);
         break;
 
         case 'about-us':
           this.$router.push('/O-nas');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(2)').css(this.activeMenuItemStyle);
         break;
 
         case 'offert':
           this.$router.push('/Oferta');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(3)').css(this.activeMenuItemStyle);
         break;
 
         case 'price-list':
           this.$router.push('/Cennik');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(4)').css(this.activeMenuItemStyle);
         break;
 
         case 'contact':
           this.$router.push('/Kontakt');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(5)').css(this.activeMenuItemStyle);
         break;
 
         case 'gallery':
           this.$router.push('/Galeria');
+          $('.list__item').css(this.unactiveMenuItemStyle);
+          $('.list__item:nth-child(6)').css(this.activeMenuItemStyle);
         break;
       }
 
@@ -126,6 +153,7 @@ export default {
 
     &__navigation{
       transition: all ease 200ms;
+      font-size: 1.5rem;
       .mobile-menu{
         display: none;
         position: absolute;
@@ -137,7 +165,6 @@ export default {
           display: block;
         }
       }
-      font-size: 1.5rem;
       .list{
         list-style-type: none;
         text-transform: capitalize;
@@ -146,6 +173,14 @@ export default {
         &__item{
           cursor: pointer;
           display: inline-block;
+          transition: all ease-out 350ms;
+          &:hover{
+            transition: all ease 200ms;
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-shadow: 0 0 35px rgba(#000, .6);
+            transform: translateY(-4px);
+          }
           &:not(:last-child){
             margin: 0 .8rem;
           }

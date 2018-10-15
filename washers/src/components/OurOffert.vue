@@ -185,6 +185,10 @@ export default {
   },
   methods: {
     showModal(which){
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#app").offset().top
+        }, 1000);
+        
         $('body').css({overflow: 'hidden'});
 
         switch(which){

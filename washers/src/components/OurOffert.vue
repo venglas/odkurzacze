@@ -7,6 +7,7 @@
             <img :src="item.img" alt="" class="item-img">
             <div class="item-title">
                 <h2>{{item.title}}</h2>
+                <h2 class="info">Kliknij aby wyświetlić szczegóły</h2>
             </div>
         </div>
 
@@ -273,7 +274,23 @@ export default {
             margin: 0 2rem;
             height: 100%;
             position: relative;
+            backface-visibility: hidden; //fix animation img jump at end
             cursor: pointer;
+            
+            &:hover{
+                .item-img{
+                    transition: filter ease-in 600ms;
+                    filter: blur(3px) grayscale(100%);
+                }
+                .item-title{
+                    .info{
+                        transition: all ease 400ms;
+                        font-size: 1.5rem;
+                        opacity: 1;
+                        padding: 2rem 0;
+                    }
+                }
+            }
             @media(max-width: 1024px){
                 width: calc(25% - 4rem);
             }
@@ -288,6 +305,7 @@ export default {
                 width: 100%;
                 height: 20rem;
                 max-height: 20rem;
+                transition: filter ease-out 500ms;
             }
         }
         .item-title{
@@ -304,6 +322,12 @@ export default {
                 @media(max-width: 1440px){
                     font-size: 1rem;
                 }
+            }
+            .info{
+                transition: all ease-out 550ms;
+                font-size: 0;
+                opacity: 0;
+                padding: 0;
             }
         }
     }

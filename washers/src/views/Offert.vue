@@ -51,6 +51,12 @@ export default {
             {id: 6, img: '../../static/img/parownica-karcher.jpg', title: 'PAROWNICA  KARCHER  SC 4 ', description: 'Parownica pozwoli Państwu na efektywne sprzątanie prawie każdej powierzchni bez konieczności użycia środków chemicznych. Gorąca para wodna dotrze w niedostępne zakamarki lub uciążliwe w utrzymaniu czystości miejsca. Dzięki udostępnionemu wyposażeniu nasza parownica znajdzie zastosowanie na powierzchniach wodoodpornych, zdezynfekuje przedmioty codziennego użytku oraz odświeży tekstylia.'}
         ]
     }
+  },
+  mounted(){
+    $('.content__img')[0].className += ' carAnimation';
+  },
+  destroyed(){
+    $('.content__img')[0].classList.remove('carAnimation');
   }
 }
 </script>
@@ -64,7 +70,7 @@ export default {
 
     width: 80%;
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
     color: #fff;
     font-size: 1.3rem;
     line-height: 1.5;
@@ -98,7 +104,7 @@ export default {
             margin-left: 2rem; //for test
             font-size: 1.4rem;
             &__item{
-                padding: 1.5rem 0;
+                padding: 1.5rem 0 0 0;
                 .item-title{
                     font-weight: 600;
                     text-transform: uppercase;
@@ -111,7 +117,7 @@ export default {
     }
     
     .info-under-list{
-        padding: 2.5rem 0;
+        padding: 2.5rem 0 0 0;
         text-align: center;
         @media(max-width: 425px){
             font-size: 1.7rem;

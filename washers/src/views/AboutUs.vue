@@ -14,6 +14,12 @@ export default {
   name: 'AboutUs',
   data () {
     return {}
+  },
+  mounted(){
+    $('.content__img')[0].className += ' carAnimation';
+  },
+  destroyed(){
+    $('.content__img')[0].classList.remove('carAnimation');
   }
 }
 </script>

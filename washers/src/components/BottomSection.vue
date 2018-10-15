@@ -55,11 +55,41 @@ export default {
     margin-left: 5%;
     position: absolute;
     top: 20%;
+    
     @media(max-width: 425px){
       max-width: 100%;
        margin-left: 0;
       top: 45%;
       height: auto;
+    }
+  }
+  .carAnimation{
+    animation-name: carDrive;
+    animation-delay: 1800ms;
+    animation-duration: 3000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+  @keyframes carDrive {
+    0%{transform: none}
+    100%{transform: translateX(215%)}
+  }
+  @media(max-width: 1440px){
+    @keyframes carDrive {
+      0%{transform: none}
+      100%{transform: translateX(130%)}
+    }
+  }
+  @media(max-width: 1024px){
+    @keyframes carDrive {
+      0%{transform: none}
+      100%{transform: translateX(40%)}
+    }
+  }
+  @media(max-width: 980px){
+    @keyframes carDrive {
+      0%{transform: none}
+      100%{transform: none}
     }
   }
 }

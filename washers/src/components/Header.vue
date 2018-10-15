@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <img src="../../static/img/icons/logo.png" alt="logo odkurza-czary" class="logo-img">
+      <img src="../../static/img/icons/logo.png" alt="logo odkurza-czary" class="logo-img" @click="goTo('start')">
     </div>
 
     <nav class="header__navigation">
@@ -62,47 +62,47 @@ export default {
 
     goTo(where){
       this.actualLocation = where;
+      let activeMenuStyle = {};
 
+      if(window.innerWidth > 425){
+        $('.list__item').css(this.unactiveMenuItemStyle);
+        activeMenuStyle = this.activeMenuItemStyle; 
+      }
+      
       switch(where){
         case 'start':
           this.$router.push('/');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(1)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(1)').css(activeMenuStyle);
         break;
 
         case 'about-us':
           this.$router.push('/O-nas');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(2)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(2)').css(activeMenuStyle);
         break;
 
         case 'offert':
           this.$router.push('/Oferta');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(3)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(3)').css(activeMenuStyle);
         break;
 
         case 'price-list':
           this.$router.push('/Cennik');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(4)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(4)').css(activeMenuStyle);
         break;
 
         case 'contact':
           this.$router.push('/Kontakt');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(5)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(5)').css(activeMenuStyle);
         break;
 
         case 'gallery':
           this.$router.push('/Galeria');
-          $('.list__item').css(this.unactiveMenuItemStyle);
-          $('.list__item:nth-child(6)').css(this.activeMenuItemStyle);
+          $('.list__item:nth-child(6)').css(activeMenuStyle);
         break;
       }
 
       //You can it better bro I believe
-      if(window.innerWidth <= 425){
+      if(window.innerWidth < 425){
         $('.list').css({height: '0'});
         $('.logo-img').css({width: '12rem'});
         $('.header__navigation').css({height: '6rem'});
@@ -138,6 +138,8 @@ export default {
         top: -13px;
         width: 14rem;
         height: 9rem;
+        cursor: pointer;
+
         @media(max-width: 425px){
           width: 12rem;
           height: auto;

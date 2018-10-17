@@ -1,31 +1,17 @@
 <template>
-  <article class="example-offert">
+    <article class="example-offert">
+        <div class="slide" id="slider2">
+            <div class="section section--top" v-for="offert in exampleOffertData">
+                <img :src="offert.img" alt="" class="section__img">
 
-    <div class="section section--top">
-        <img :src="exampleOffert[0].img" alt="" class="section__img">
-        <div class="section__description section__description--top">
-            <h2 class="title">{{ exampleOffert[0].name }}</h2>
-            <p class="description">{{ exampleOffert[0].description }}</p>
+                <div class="section__description section__description--top">
+                    <h2 class="title">{{ offert.name }}</h2>
+                    <p class="description">{{ offert.description }}</p>
+                </div>
+
+            </div>
         </div>
-        <div style="clear: both"></div>
-    </div>
-
-    <div class="section section--bottom">
-        <img :src="exampleOffert[1].img" v-if="isMobile" alt="" class="section__img">
-
-        <div class="section__description section__description--bottom">
-            <h2 class="title">{{ exampleOffert[1].name }}</h2>
-            <p class="description">{{ exampleOffert[1].description }}</p>
-        </div>
-
-        <img :src="exampleOffert[1].img" v-if="!isMobile" alt="" class="section__img">
-
-        <div style="clear: both"></div>
-    </div>
-
-    <div style="clear: both"></div>
-
-  </article>
+    </article>
 </template>
 
 <script>
@@ -34,7 +20,7 @@ export default {
   data () {
     return {
         isMobile: false,
-        exampleOffert: [
+        exampleOffertData: [
             {name: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1', img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
             {name: 'ODKURZACZ  PIORĄCY PUZZI  10/1', img: '../../static/img/odkurzacz-puzzi.jpg', description: 'Dzięki bogatemu wyposażeniu urządzenie Puzzi można stosować zarówno do czyszczenia wykładzin dywanowych jak i tapicerki samochodowej, meblowej oraz podłóg twardych. Doskonale sprawdza się w hotelach, biurowcach, firmach zajmujących się przewozem osób. W zależności od stopnia zabrudzenia powierzchni może pracować w jednym lub w dwóch przejściach roboczych. Pozostawia jedynie niewielką wilgoć, dzięki czemu powierzchnię można użytkować w krótkim czasie po przeprowadzeniu prac czyszczących.'}
         ]
@@ -45,7 +31,17 @@ export default {
     if(window.innerWidth <= 425){
         this.isMobile = true
     }
-  }
+  },
+  mounted(){
+    $('#slider2').slick({
+        infinite: true,
+        dots: true,
+        speed: 800,
+        autoplay: true,
+        prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
+        nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
+    });
+    }
 }
 </script>
 

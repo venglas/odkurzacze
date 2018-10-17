@@ -2,9 +2,15 @@
   <div id="app">
     <Header></Header>
 
-    <transition name="fade">
+    <!-- <transition name="fade">
       <router-view/>
-    </transition>
+    </transition> -->
+
+    <Slider></Slider>
+    <Start></Start>
+
+
+
 
     <BottomSection></BottomSection>
   </div>
@@ -13,12 +19,16 @@
 <script>
 import Header from './components/Header'
 import BottomSection from './components/BottomSection'
+import Slider from './components/Slider'
+import Start from './views/Start'
 
 export default {
   name: 'App',
   components: {
     Header,
-    BottomSection
+    BottomSection,
+    Slider,
+    Start
   }
 }
 </script>

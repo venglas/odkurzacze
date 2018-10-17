@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <Slider></Slider>
+    <!-- <Slider></Slider> -->
 
     <div class="section-under"> 
       <h1>Odwiedź nasz profil na facebooku</h1>

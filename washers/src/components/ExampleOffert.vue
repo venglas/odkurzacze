@@ -9,8 +9,20 @@
 
                 <div class="section-content__info">
                     <h3 class="head-description">{{ offert.description }}</h3>
-                    <ul class="list" v-if="offert.list1">
+                    <ul class="list" v-if="offert.list1.length > 1">
+                        <h3 class="list__title">
+                            zastosowanie:
+                        </h3>
                         <li class="list__item" v-for="listItem in offert.list1">
+                            {{ listItem }}
+                        </li>
+                    </ul>
+
+                    <ul class="list" v-if="offert.composition.length > 1">
+                        <h3 class="list__title">
+                            wyposażenie:
+                        </h3>
+                        <li v-for="listItem in offert.composition">
                             {{ listItem }}
                         </li>
                     </ul>
@@ -35,11 +47,6 @@
 
                     </table>
 
-                    <ul class="list" v-if="offert.composition">
-                        <li v-for="listItem in offert.composition">
-                            {{ listItem }}
-                        </li>
-                    </ul>
                 </div>
                 
 
@@ -189,12 +196,13 @@ export default {
 
 .example-offert{
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     margin: 0 auto;
     background-color: #fff;
     padding: 8rem 3rem;
     @media(max-width: 425px){
         text-align: center;
+        padding: 6rem 1rem;
     }
 
     .slider{
@@ -204,29 +212,54 @@ export default {
                 width: calc(25% - 1rem);
                 display: inline-block;
                 vertical-align: top;
+                @media(max-width: 425px){
+                    display: block;
+                    width: 100%;
+                }
 
                 .title{}
                 .img{
                     max-width: 100%;
+                    @media(max-width: 425px){
+                        max-width: 65%;
+                        margin: 0 auto;
+                    }
                 }
             }
             &__info{
                 width: calc(75% - 5rem);
                 display: inline-block;
                 padding: 0 5rem;
+                @media(max-width: 425px){
+                    display: block;
+                    width: 100%;
+                }
                 .head-description{
                     text-align: center;
+                    padding-bottom: 3rem;
+                }
+                .list{
+                    padding-bottom: 3rem;
+                    &__title{
+                        padding: 1rem 0;
+                    }
                 }
                 .table{
                     width: 40rem;
                     text-align: left;
+                    padding-bottom: 3rem;
+                    @media(max-width: 425px){
+                        width: 95%;
+                        margin: 0 auto;
+                    }
                     &__row{
                         &--vertical{
                             display: block;
                             width: 100%;
+                            padding-bottom: 1rem;
                             th{
                                 display: inline-block;
-                                width: calc(50% - 1rem);
+                                width: calc(50% - 1rem)
                             }
                         }
                         &--horizontal{

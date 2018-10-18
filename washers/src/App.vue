@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <Header></Header>
-
-    <!-- <transition name="fade">
+    
+    <transition name="fade">
       <router-view/>
-    </transition> -->
+    </transition>
 
-    <Slider></Slider>
+    <!-- this components should be in one other view for example start that I can add other route for gallery view -->
+    <!-- <Slider></Slider>
     <AboutUs></AboutUs>
     <Start></Start>
-    <Contact></Contact>
+    <Contact></Contact> -->
 
 
 

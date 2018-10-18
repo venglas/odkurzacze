@@ -1,6 +1,7 @@
 <template>
   <div class="">
-    <!-- <Slider></Slider> -->
+    <Slider></Slider>
+    <AboutUs></AboutUs>
 
     <div class="section-under"> 
       <h1>Odwiedź nasz profil na facebooku</h1>
@@ -11,6 +12,8 @@
 
     <OurOffert></OurOffert>
     <ExampleOffert></ExampleOffert>
+
+    <Contact></Contact>
   </div>
 </template>
 
@@ -19,10 +22,12 @@ import Slider from '../components/Slider'
 import OurOffert from '../components/OurOffert'
 import ExampleOffert from '../components/ExampleOffert'
 import BottomSection from '../components/BottomSection'
+import AboutUs from './AboutUs'
+import Contact from './Contact'
 
 export default {
   name: 'Start',
-  components: {Slider, OurOffert, ExampleOffert, BottomSection},
+  components: {Slider, OurOffert, ExampleOffert, BottomSection, AboutUs, Contact},
   data () {
     return {}
   }

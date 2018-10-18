@@ -13,7 +13,7 @@
                         <h3 class="list__title">
                             zastosowanie:
                         </h3>
-                        <li class="list__item" v-for="listItem in offert.list1">
+                        <li class="list__item list__item--basic" v-for="listItem in offert.list1">
                             {{ listItem }}
                         </li>
                     </ul>
@@ -240,6 +240,11 @@ export default {
                 }
                 .list{
                     padding-bottom: 3rem;
+                    &__item{
+                        &--basic{
+                            text-shadow: none;
+                        }
+                    }
                     &__title{
                         padding: 1rem 0;
                     }

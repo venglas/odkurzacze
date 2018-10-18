@@ -111,6 +111,7 @@ export default {
       background-color: transparent;
       border: none;
       cursor: pointer;
+      outline: none;
     }
     .slick-prev{
       left: 2rem;

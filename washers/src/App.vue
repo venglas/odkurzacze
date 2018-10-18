@@ -7,8 +7,9 @@
     </transition> -->
 
     <Slider></Slider>
+    <AboutUs></AboutUs>
     <Start></Start>
-
+    <Contact></Contact>
 
 
 
@@ -21,6 +22,8 @@ import Header from './components/Header'
 import BottomSection from './components/BottomSection'
 import Slider from './components/Slider'
 import Start from './views/Start'
+import AboutUs from './views/AboutUs'
+import Contact from './views/Contact'
 
 export default {
   name: 'App',
@@ -28,7 +31,9 @@ export default {
     Header,
     BottomSection,
     Slider,
-    Start
+    Start,
+    AboutUs,
+    Contact
   }
 }
 </script>

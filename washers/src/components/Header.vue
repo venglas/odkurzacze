@@ -71,27 +71,42 @@ export default {
       
       switch(where){
         case 'start':
-          this.$router.push('/');
+          // this.$router.push('/');
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#app").offset().top
+          }, 1000);
           $('.list__item:nth-child(1)').css(activeMenuStyle);
         break;
 
         case 'about-us':
-          this.$router.push('/O-nas');
+          // this.$router.push('/O-nas');
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#about-us").offset().top
+          }, 1000);
           $('.list__item:nth-child(2)').css(activeMenuStyle);
         break;
 
         case 'offert':
-          this.$router.push('/Oferta');
+          // this.$router.push('/Oferta');
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#our-offert").offset().top
+          }, 1000);
           $('.list__item:nth-child(3)').css(activeMenuStyle);
         break;
 
         case 'price-list':
-          this.$router.push('/Cennik');
+          // this.$router.push('/Cennik');
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#price-list").offset().top
+          }, 1000);
           $('.list__item:nth-child(4)').css(activeMenuStyle);
         break;
 
         case 'contact':
-          this.$router.push('/Kontakt');
+          // this.$router.push('/Kontakt');
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#contact").offset().top
+          }, 1000);
           $('.list__item:nth-child(5)').css(activeMenuStyle);
         break;
 

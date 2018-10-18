@@ -1,5 +1,5 @@
 <template>
-  <div class="about-us">
+  <div class="about-us" id="about-us"> 
       <div class="about-us__content">
         <h1>O Nas</h1>
         <h2 class="animation-1">Jesteśmy niewielką firmą podchodzącą do każdego zlecenia niezwykle poważnie i profesjonalnie.</h2>

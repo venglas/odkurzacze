@@ -1,5 +1,5 @@
 <template>
-  <article class="our-offert">
+  <article class="our-offert" id="our-offert">
     <h1 class="our-offert__title"> Poznaj naszą ofertę </h1>
 
     <div class="offert-box">

@@ -1,7 +1,7 @@
 <template>
-  <article class="full-offert">
+  <article class="full-offert" id="offert">
 
-    <div class="full-offert__intro">
+    <div class="full-offert__intro" id="our-offert">
         <h1>Czysta przyjemność z jazdy samochodem!</h1>
         <h2>Każdy z nas wie jak ciężko utrzymać porządek i czystość w naszych autach. Podróże, zakupy oraz codzienne używanie samochodu narażają tapicerkę na kurz, błoto, różnego rodzaju plamy, które trudno usunąć. Doprowadzenie naszego auta do porządku zabiera sporo czasu, zaś oczekiwany efekt końcowy wymaga pewnych nakładów finansowych na niezbędne środki czystości oraz chemię.</h2>
         <h2>Korzystając z naszych usług prania tapicerki samochodowej zapewnisz sobie komfort jazdy a zaoszczędzony dzięki temu czas możesz miło spędzić z najbliższymi!</h2>

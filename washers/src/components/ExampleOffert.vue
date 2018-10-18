@@ -1,5 +1,5 @@
 <template>
-    <article class="example-offert">
+    <article class="example-offert" id="price-list">
         <div class="slider" id="slider2">
             <div class="section-content" v-for="offert in exampleOffertData">
                 <div class="section-content__header">

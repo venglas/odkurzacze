@@ -14,7 +14,7 @@
         </div>
         
 
-        <div class="offert" v-for="singleOffert in offert" v-if="singleOffert.id != 3" :id="'offert'+singleOffert.id">
+        <div class="offert" v-for="singleOffert in offert" v-if="singleOffert.id != 4" :id="'offert'+singleOffert.id">
             <div class="offert__header">
                 <h1 class="title">
                     {{ singleOffert.title }}
@@ -241,7 +241,24 @@ export default {
             },
 
             {
-                id: 3, img: '../../static/img/kaf4.png',
+                id: 3, img: '../../static/img/car.png',
+                title: 'Dojazd do klienta',
+                subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
+                description: '',
+                subDescription: '',
+                offertCaption: '',
+                offertList: [
+                    'Do 15km - 10zł',
+                    'Powyżej 15km - cena do uzgodnienia.'
+                ],
+                time: '',
+                info1: '',
+                price: '',
+                ifno2: ''
+            },
+
+            {
+                id: 4, img: '../../static/img/kaf4.png',
                 title: 'Wypożyczalnia Karcher',
             },
         ]
@@ -263,6 +280,12 @@ export default {
             break;
 
             case 3:
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#offert3").offset().top
+                }, 1000);
+            break;
+
+            case 4:
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $("#price-list").offset().top
                 }, 1000);

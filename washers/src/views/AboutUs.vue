@@ -16,10 +16,10 @@ export default {
     return {}
   },
   mounted(){
-    $('.content__img')[0].className += ' carAnimation';
+    // $('.content__img')[0].className += ' carAnimation';
   },
   destroyed(){
-    $('.content__img')[0].classList.remove('carAnimation');
+    // $('.content__img')[0].classList.remove('carAnimation');
   }
 }
 </script>

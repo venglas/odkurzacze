@@ -3,18 +3,80 @@
     <h1 class="our-offert__title"> Poznaj naszą ofertę </h1>
 
     <div class="offert-box">
-        <div v-for="item in offert" @click="showModal(item.id)" :id="'box'+item.id" class="offert-box__item" title="Kliknij aby wyświetlić szczegóły">
-            <img :src="item.img" alt="" class="item-img">
-            <div class="item-title">
-                <h2>{{item.title}}</h2>
-                <h2 class="info">Kliknij aby wyświetlić szczegóły</h2>
+        <div class="wrapper">
+            <div v-for="item in offert" @click="scrollToOffert(item.id)" :id="'box'+item.id" class="offert-box__item" title="Kliknij aby wyświetlić szczegóły">
+                <img :src="item.img" alt="" class="item-img">
+                <div class="item-title">
+                    <h2>{{item.title}}</h2>
+                    <h2 class="info">Kliknij aby wyświetlić szczegóły</h2>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="offert" v-for="singleOffert in offert" v-if="singleOffert.id != 3" :id="'offert'+singleOffert.id">
+            <div class="offert__header">
+                <h1 class="title">
+                    {{ singleOffert.title }}
+                </h1>
+                <!-- <img class="img" :src="singleOffert.img" alt=""> -->
+            </div>
+
+            <div class="offert__box">
+                <h2 class="subtitle">
+                    {{ singleOffert.subtitle }}
+                </h2>
+
+                <h4 class="description">
+                    {{singleOffert.description }}
+                </h4>
+
+                <h4 class="subdescription">
+                    {{ singleOffert.subDescription }}
+                </h4>
+
+                <ul class="list">
+                    <li class="list__item" v-for="listItem in singleOffert.offertList">
+                        {{listItem}}
+                    </li>
+                </ul>
+
+                <div class="price-info info" v-if="singleOffert.price != ''">
+                    <img class="img" :src="iconPrice" alt="">
+                    <h4 class="info__content">
+                        {{ singleOffert.price}}
+                    </h4>
+                </div>
+
+                <div class="time-info info" v-if="singleOffert.time != ''">
+                    <img class="img" :src="iconTime" alt="">
+                    <h4 class="info__content">
+                        {{ singleOffert.time }}
+                    </h4>
+                </div>
+
+                <div class="order-info info" v-if="singleOffert.info1 != ''">
+                    <img class="img" :src="iconOrder" alt="">
+                    <h4 class="info__content">
+                        {{ singleOffert.info1 }}
+                    </h4>
+                </div>
+
+                <div class="last-info" v-if="singleOffert.info2 != ''">
+                    <h4 class="last-info__content">
+                        {{ singleOffert.info2 }}
+                    </h4>
+                </div>
             </div>
         </div>
 
-        <!-- modal should be in new component -->
-        <div class="info-modal" v-for="modal in offert" :id="'modal'+modal.id">
 
-            <img :src="closeIcon" alt="close icon" @click="closeModal(modal.id)" class="close-icon">
+
+
+        <!-- modal should be in new component -->
+        <!-- <div class="info-modal" v-for="modal in offert" :id="'modal'+modal.id"> -->
+
+            <!-- <img :src="closeIcon" alt="close icon" @click="closeModal(modal.id)" class="close-icon">
             
             <div class="section-top">
                 <h2>{{ modal.title }}</h2>
@@ -64,8 +126,8 @@
                 </li>
             </ul>
 
-            <h3>{{ info2 }}</h3>
-        </div>
+            <h3>{{ info2 }}</h3> -->
+        <!-- </div>  -->
     </div>
   </article>
 </template>
@@ -78,48 +140,53 @@ export default {
         telephone: '694-045-198',
         email: 'example@gmail.com',
         closeIcon: '../../static/img/icons/close-icon.png',
+        iconTime: '../../static/img/icons/calendar-icon-black.png',
+        iconOrder: '../../static/img/icons/order-icon-black.png',
+        iconContact: '../../static/img/icons/contact-icon.png',
+        iconPrice: '../../static/img/icons/coin-icon-black.png',
+
         offert: [
-            {
-                id: 1, img: '../../static/img/kaf1.png',
-                title: 'SPRZĄTANIE BIUR',
-                subtitle: 'Czyste biuro czysta przyjemność !',
-                description: 'Zbliża się koniec pracy a na biurku w dalszym ciągu piętrzą się dokumenty, kuchnia pełna brudnych naczyń, pełne kosze, zadeptana wykładzina i zamiast cieszyć się wolnym popołudniem martwisz się ile jeszcze czasu musisz poświęcić na uporządkowanie biura.',
-                subDescription: 'Skontaktuj się z nami – chętnie zadbamy o porządek w Twoim biurze i domu.',
-                offertCaption: 'Przykładowa usługa sprzątania biura obejmuje:',
-                offertList: [
-                    'sprzątanie powierzchni biurka',
-                    'odkurzanie wykładzin',
-                    'opróżnianie koszy',
-                    'wycieranie półek, szaf',
-                    'mycie podłogi',
-                    'sprzątanie pomieszczeń socjalnych i WC,',
-                    'wycieranie grzejników oświetlenia, itp.',
-                    'okresowe mycie pionowych i poziomych powierzchni mebli i drzwi',
-                    'okresowe wycieranie koszy oraz stelaży foteli i biurek',
-                    'okresowe wycieranie kurzu z miejsc usytuowanych najwyżej (górne powierzchnie wysokich szaf, ościeżnice drzwi i okien, górne powierzchnie drzwi',
-                    'mycie okien (raz na 6 miesięcy, wycena indywidualna)'
-                ],
-                iconTime: '../../static/img/icons/time-icon.png',
-                iconOrder: '../../static/img/icons/order-icon.png',
-                iconContact: '../../static/img/icons/contact-icon.png',
-                iconPrice: '../../static/img/icons/money-icon.png',
-                time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
-                info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
-                price: 'godzina sprzątania 35zł',
-                windowsClean: [
-                    'Cennik mycia okien:',
-                    'okno jednoskrzydłowe od 10 zł',
-                    'okno dwuskrzydłowe od 15 zł',
-                    'okno trzyskrzydłowe od 25 zł',
-                    'drzwi balkonowe od 25 zł',
-                    'drewniane starego typu – rozkręcane, podwójne wycena indywidualna',
-                    'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem sprzątania.'
-                ],
-                ifno2: 'Uwaga: do ceny należy doliczyć ustawową stawkę VAT w wysokości 23%/nie jesteśmy płatnikiem VAT'
-            },
+            // {
+            //     id: 1, img: '../../static/img/kaf1.png',
+            //     title: 'SPRZĄTANIE BIUR',
+            //     subtitle: 'Czyste biuro czysta przyjemność !',
+            //     description: 'Zbliża się koniec pracy a na biurku w dalszym ciągu piętrzą się dokumenty, kuchnia pełna brudnych naczyń, pełne kosze, zadeptana wykładzina i zamiast cieszyć się wolnym popołudniem martwisz się ile jeszcze czasu musisz poświęcić na uporządkowanie biura.',
+            //     subDescription: 'Skontaktuj się z nami – chętnie zadbamy o porządek w Twoim biurze i domu.',
+            //     offertCaption: 'Przykładowa usługa sprzątania biura obejmuje:',
+            //     offertList: [
+            //         'sprzątanie powierzchni biurka',
+            //         'odkurzanie wykładzin',
+            //         'opróżnianie koszy',
+            //         'wycieranie półek, szaf',
+            //         'mycie podłogi',
+            //         'sprzątanie pomieszczeń socjalnych i WC,',
+            //         'wycieranie grzejników oświetlenia, itp.',
+            //         'okresowe mycie pionowych i poziomych powierzchni mebli i drzwi',
+            //         'okresowe wycieranie koszy oraz stelaży foteli i biurek',
+            //         'okresowe wycieranie kurzu z miejsc usytuowanych najwyżej (górne powierzchnie wysokich szaf, ościeżnice drzwi i okien, górne powierzchnie drzwi',
+            //         'mycie okien (raz na 6 miesięcy, wycena indywidualna)'
+            //     ],
+            //     iconTime: '../../static/img/icons/time-icon.png',
+            //     iconOrder: '../../static/img/icons/order-icon.png',
+            //     iconContact: '../../static/img/icons/contact-icon.png',
+            //     iconPrice: '../../static/img/icons/money-icon.png',
+            //     time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
+            //     info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
+            //     price: 'godzina sprzątania 35zł',
+            //     windowsClean: [
+            //         'Cennik mycia okien:',
+            //         'okno jednoskrzydłowe od 10 zł',
+            //         'okno dwuskrzydłowe od 15 zł',
+            //         'okno trzyskrzydłowe od 25 zł',
+            //         'drzwi balkonowe od 25 zł',
+            //         'drewniane starego typu – rozkręcane, podwójne wycena indywidualna',
+            //         'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem sprzątania.'
+            //     ],
+            //     ifno2: 'Uwaga: do ceny należy doliczyć ustawową stawkę VAT w wysokości 23%/nie jesteśmy płatnikiem VAT'
+            // },
 
             {
-                id: 2, img: '../../static/img/kaf2.png',
+                id: 1, img: '../../static/img/kaf2.png',
                 title: 'Pranie dywanów i wykładzin',
                 subtitle: 'Ciepły, miękki i czysty dywan!',
                 description: 'Czysty i ciepły dom to nie tylko lśniące okna, meble, sofa ale także dywan czy wykładzina. Codzienne użytkowanie zostawia po sobie bardzo widoczne, denerwujące plamy i ślady. Mamy na to skuteczny i wypróbowany sposób, skorzystaj i Ty z naszego doświadczenia!',
@@ -133,10 +200,6 @@ export default {
                     'wykładzina powyżej 20m2 od 4 zł za m2',
                     'wykładzina Ponad 100m i stałe zlecenia cena indywidualna'
                 ],
-                iconTime: '../../static/img/icons/time-icon.png',
-                iconOrder: '../../static/img/icons/order-icon.png',
-                iconContact: '../../static/img/icons/contact-icon.png',
-                iconPrice: '../../static/img/icons/money-icon.png',
                 time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
                 info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
                 price: 'Cena jest zależna od czyszczonej powierzchni. W przypadku biur, obiektów usługowych i innych firm, które potrzebują regularnych usług prania wykładzin i dywanów zapraszamy do kontaktu telefonicznego. Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.',
@@ -145,11 +208,11 @@ export default {
             },
 
             {
-                id: 3, img: '../../static/img/kaf3.png',
+                id: 2, img: '../../static/img/kaf3.png',
                 title: 'Pranie tapicerki meblowej',
                 subtitle: 'Wypoczynek i relaks!',
                 description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. Na proces czyszczenia składa się:',
-                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, <br /> pranie zasadnicze odkurzaczem ekstrakcyjnym`,
+                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, pranie zasadnicze odkurzaczem ekstrakcyjnym`,
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
                     'Poduchy meblowe 10 – 15 zł',
@@ -178,60 +241,81 @@ export default {
             },
 
             {
-                id: 4, img: '../../static/img/kaf4.png',
+                id: 3, img: '../../static/img/kaf4.png',
                 title: 'Wypożyczalnia Karcher',
             },
         ]
     }
   },
   methods: {
-    showModal(which){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#app").offset().top
-        }, 1000);
-        
-        $('body').css({overflow: 'hidden'});
-
+    scrollToOffert(which){
         switch(which){
             case 1:
-                $('#modal'+which).css({display: 'block'})
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#offert1").offset().top
+                }, 1000);
             break;
 
             case 2:
-                $('#modal'+which).css({display: 'block'})
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#offert2").offset().top
+                }, 1000);
             break;
 
             case 3:
-                $('#modal'+which).css({display: 'block'})
-            break;
-
-            case 4:
-                this.$router.push('/Cennik');
-                $('body').css({overflowY: 'scroll'});
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#price-list").offset().top
+                }, 1000);
             break;
         }
     },
-    closeModal(which){
-        $('body').css({overflowY: 'scroll'});
+    // showModal(which){
+    //     $([document.documentElement, document.body]).animate({
+    //         scrollTop: $("#app").offset().top
+    //     }, 1000);
+        
+    //     $('body').css({overflow: 'hidden'});
 
-        switch(which){
-            case 1:
-                $('#modal'+which).css({display: 'none'})
-            break;
-        }
+    //     switch(which){
+    //         case 1:
+    //             $('#modal'+which).css({display: 'block'})
+    //         break;
 
-        switch(which){
-            case 2:
-                $('#modal'+which).css({display: 'none'})
-            break;
-        }
+    //         case 2:
+    //             $('#modal'+which).css({display: 'block'})
+    //         break;
 
-        switch(which){
-            case 3:
-                $('#modal'+which).css({display: 'none'})
-            break;
-        }
-    }
+    //         case 3:
+    //             $('#modal'+which).css({display: 'block'})
+    //         break;
+
+    //         case 4:
+    //             this.$router.push('/Cennik');
+    //             $('body').css({overflowY: 'scroll'});
+    //         break;
+    //     }
+    // },
+    // closeModal(which){
+    //     $('body').css({overflowY: 'scroll'});
+
+    //     switch(which){
+    //         case 1:
+    //             $('#modal'+which).css({display: 'none'})
+    //         break;
+    //     }
+
+    //     switch(which){
+    //         case 2:
+    //             $('#modal'+which).css({display: 'none'})
+    //         break;
+    //     }
+
+    //     switch(which){
+    //         case 3:
+    //             $('#modal'+which).css({display: 'none'})
+    //         break;
+    //     }
+    // }
   }
 }
 </script>
@@ -295,11 +379,13 @@ export default {
                 width: calc(25% - 4rem);
             }
             @media(max-width: 768px){
-                width: calc(50% - 4rem);
+                width: calc(33% - 4rem);
                 margin: 2rem 2rem;
             }
             @media(max-width: 425px){
+                display: block;
                 width: 95%;
+                height: fit-content;
             }
             .item-img{
                 width: 100%;
@@ -317,6 +403,9 @@ export default {
             width: 100%;
             background-color: rgba(255, 255, 255, .6);
             padding: .5rem 0;
+            @media(max-width: 768px){
+                top: 40%;
+            }
             h2{
                 text-align: center;
                 @media(max-width: 1440px){
@@ -333,58 +422,122 @@ export default {
     }
 }
 
-.info-modal{
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgb(68, 68, 68);
-    top: 0;
-    left: 0;
-    z-index: 1999;
-    padding: 5rem;
-    color: #fff;
-    font-size: 1.5rem;
-    white-space: normal;
+.wrapper{
+    text-align: center;
+}
 
-    .close-icon{
-        position: absolute;
-        top: 2rem;
-        right: 5rem;
-        cursor: pointer;
-    }
-    .section-top{
+.offert{
+    width: 100%;
+    padding-top: 10rem;
+    &__header{
         text-align: center;
-        font-size: 1.5rem;
-        *{
-            padding: 1rem 0;
-        }
-    }
-    .offert-title{
-        font-size: 1.7rem;
-        padding: 2rem 0 1rem 0;
-    }
-    .info-modal-list{
-        margin-left: 2rem;
-        text-decoration: none;
-        font-size: 1.5rem;
-        &--2{
-            li{
-                &:first-child{
-                    list-style: none;
-                    font-weight: 600;
-                    margin-left: -2rem;
-                }
+        padding: 2.5rem 0;
+        .title{
+            font-size: 4rem;
+            text-shadow: 0 0 30px rgba(0, 0, 0, .5);
+            @media(max-width: 425px){
+                font-size: 2.5rem;
             }
         }
     }
-    .info-item{
-        padding: 1.5rem 0;
-        display: flex;
-        &__photo{
-            margin-right: 1rem;
+    &__box{
+        width: 80%;
+        margin: 0 auto;
+        white-space: normal;
+        .subtitle{
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+        .description{
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        .subdescription{
+            font-size: 1.1rem;
+            padding-bottom: 1rem;
+        }
+        .list{
+            margin-left: 2rem;
+            padding-bottom: 2.5rem;
+        }
+        // .price-info, .time-info, .order-info{
+        //     .img{
+        //         display: inline-block;
+        //     }
+        //     &__content{
+        //         display: inline-block;
+        //     }
+        // }
+        .info{
+            padding: 1.5rem 0;
+            .img{
+                display: inline-block;
+                width: 32px;
+                vertical-align: top;
+            }
+            .info__content{
+                display: inline-block;
+                width: calc(100% - 32px - 3rem);
+                margin-left: 2rem;
+            }
         }
     }
+
 }
+
+// .info-modal{
+//     display: none;
+//     width: 100vw;
+//     height: 100vh;
+//     position: absolute;
+//     background-color: rgb(68, 68, 68);
+//     top: 0;
+//     left: 0;
+//     z-index: 1999;
+//     padding: 5rem;
+//     color: #fff;
+//     font-size: 1.5rem;
+//     white-space: normal;
+
+//     .close-icon{
+//         position: absolute;
+//         top: 2rem;
+//         right: 5rem;
+//         cursor: pointer;
+//     }
+//     .section-top{
+//         text-align: center;
+//         font-size: 1.5rem;
+//         *{
+//             padding: 1rem 0;
+//         }
+//     }
+//     .offert-title{
+//         font-size: 1.7rem;
+//         padding: 2rem 0 1rem 0;
+//     }
+//     .info-modal-list{
+//         margin-left: 2rem;
+//         text-decoration: none;
+//         font-size: 1.5rem;
+//         &--2{
+//             li{
+//                 &:first-child{
+//                     list-style: none;
+//                     font-weight: 600;
+//                     margin-left: -2rem;
+//                 }
+//             }
+//         }
+//     }
+//     .info-item{
+//         padding: 1.5rem 0;
+//         display: flex;
+//         &__photo{
+//             margin-right: 1rem;
+//         }
+//     }
+// }
 
 </style>

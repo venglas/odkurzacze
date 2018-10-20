@@ -43,20 +43,20 @@ export default {
   data () {
     return {
         offert: [
-            {id: 1, img: '../../static/img/myjka-karcher-2.jpg', title: 'MYJKA DO OKIEN KARCHER VW 2 PREMIUM', description: 'Zapomnij o wielogodzinnych zmaganiach z myciem okien! Chcesz szybko umyć okna, lustra lub kafelki? To urządzenie jest stworzony z myślą o Tobie. Myjka WV 2 Premium BLACK przeznaczony jest do mycia wszelkiego rodzaju powierzchni szklanych, luster, a także fliz w domu.'},
-            {id: 2, img: '../../static/img/myjka-karcher.jpg', title: 'MYJKA  KARCHER K5  FULL CONTROL HOME ', description: 'nnowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy.'},
-            {id: 3, img: '../../static/img/pianownica-do-myjki.jpg', title: 'PIANOWNICĘ DO MYJKI KARCGER K5', description: ''},
-            {id: 4, img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg', title: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
-            {id: 5, img: '../../static/img/odkurzacz-puzzi.jpg', title: 'ODKURZACZ  PIORĄCY PUZZI  10/1', description: 'Dzięki bogatemu wyposażeniu urządzenie Puzzi można stosować zarówno do czyszczenia wykładzin dywanowych jak i tapicerki samochodowej, meblowej oraz podłóg twardych. Doskonale sprawdza się w hotelach, biurowcach, firmach zajmujących się przewozem osób. W zależności od stopnia zabrudzenia powierzchni może pracować w jednym lub w dwóch przejściach roboczych. Pozostawia jedynie niewielką wilgoć, dzięki czemu powierzchnię można użytkować w krótkim czasie po przeprowadzeniu prac czyszczących.'},
-            {id: 6, img: '../../static/img/parownica-karcher.jpg', title: 'PAROWNICA  KARCHER  SC 4 ', description: 'Parownica pozwoli Państwu na efektywne sprzątanie prawie każdej powierzchni bez konieczności użycia środków chemicznych. Gorąca para wodna dotrze w niedostępne zakamarki lub uciążliwe w utrzymaniu czystości miejsca. Dzięki udostępnionemu wyposażeniu nasza parownica znajdzie zastosowanie na powierzchniach wodoodpornych, zdezynfekuje przedmioty codziennego użytku oraz odświeży tekstylia.'}
+            {id: 1, img: '../../static/img/odkurzacz-puzzi.jpg', title: 'ODKURZACZ  PIORĄCY PUZZI  10/1', description: 'Dzięki bogatemu wyposażeniu urządzenie Puzzi można stosować zarówno do czyszczenia wykładzin dywanowych jak i tapicerki samochodowej, meblowej oraz podłóg twardych. Doskonale sprawdza się w hotelach, biurowcach, firmach zajmujących się przewozem osób. W zależności od stopnia zabrudzenia powierzchni może pracować w jednym lub w dwóch przejściach roboczych. Pozostawia jedynie niewielką wilgoć, dzięki czemu powierzchnię można użytkować w krótkim czasie po przeprowadzeniu prac czyszczących.'},
+            {id: 2, img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg', title: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1', description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza.'},
+            {id: 3, img: '../../static/img/myjka-karcher.jpg', title: 'MYJKA  KARCHER K5  FULL CONTROL HOME ', description: 'nnowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy.'},
+            {id: 4, img: '../../static/img/parownica-karcher.jpg', title: 'PAROWNICA  KARCHER  SC 4 ', description: 'Parownica pozwoli Państwu na efektywne sprzątanie prawie każdej powierzchni bez konieczności użycia środków chemicznych. Gorąca para wodna dotrze w niedostępne zakamarki lub uciążliwe w utrzymaniu czystości miejsca. Dzięki udostępnionemu wyposażeniu nasza parownica znajdzie zastosowanie na powierzchniach wodoodpornych, zdezynfekuje przedmioty codziennego użytku oraz odświeży tekstylia.'},
+            {id: 5, img: '../../static/img/myjka-karcher-2.jpg', title: 'MYJKA DO OKIEN KARCHER VW 2 PREMIUM', description: 'Zapomnij o wielogodzinnych zmaganiach z myciem okien! Chcesz szybko umyć okna, lustra lub kafelki? To urządzenie jest stworzony z myślą o Tobie. Myjka WV 2 Premium BLACK przeznaczony jest do mycia wszelkiego rodzaju powierzchni szklanych, luster, a także fliz w domu.'},
+            {id: 6, img: '../../static/img/pianownica-do-myjki.jpg', title: 'PIANOWNICĘ DO MYJKI KARCGER K5', description: ''},
         ]
     }
   },
   mounted(){
-    $('.content__img')[0].className += ' carAnimation';
+    // $('.content__img')[0].className += ' carAnimation';
   },
   destroyed(){
-    $('.content__img')[0].classList.remove('carAnimation');
+    // $('.content__img')[0].classList.remove('carAnimation');
   }
 }
 </script>

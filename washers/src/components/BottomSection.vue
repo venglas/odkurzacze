@@ -2,7 +2,7 @@
   <article class="bottom-section">
       
       <div class="content">
-        <img src="../../static/img/car.png" alt="auto dostawcze" class="content__img">
+        <img src="../../static/img/car.png" alt="auto dostawcze" class="content__img" id="car">
         <h2 class="content__title">Dojazd do klienta na terenie całego Śląska</h2>
       </div>
 
@@ -15,6 +15,13 @@ export default {
   name: 'BottomSection',
   data () {
     return {}
+  },
+  mounted(){
+    document.addEventListener("scroll", ()=>{
+      if(window.pageYOffset > 3900){
+        $('#car').addClass("carAnimation")
+      }
+    })
   }
 }
 </script>
@@ -65,7 +72,6 @@ export default {
   }
   .carAnimation{
     animation-name: carDrive;
-    animation-delay: 1800ms;
     animation-duration: 3000ms;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;

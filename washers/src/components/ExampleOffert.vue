@@ -1,10 +1,16 @@
 <template>
     <article class="example-offert" id="price-list">
+        <h1 class="example-offert__header">
+            Wypożyczalnia Karcher
+        </h1>
         <div class="slider" id="slider2">
             <div class="section-content" v-for="offert in exampleOffertData">
                 <div class="section-content__header">
                     <h2 class="title">{{ offert.title }}</h2>
                     <img :src="offert.img" alt="" class="img">
+
+                    <h2 style="padding-top: 2rem; text-align: center">{{offert.secondImgTitle}}</h2>
+                    <img :src="offert.secondImg" alt="" class="second-img" v-if="offert.secondImg != ''">
                 </div>
 
                 <div class="section-content__info">
@@ -82,18 +88,12 @@ export default {
                     'ssawka 280 mm'
                 ]
             },
-
-            { // this element should be comared with myjka k5 
-                id: 2, img: '../../static/img/pianownica-do-myjki.jpg',
-                title: 'PIANOWNICĘ DO MYJKI KARCGER K5',
-                description: '',
-                list1: [],
-                priceList: [],
-                composition: []
-            },
             
             {
                 id: 3, img: '../../static/img/myjka-karcher.jpg',
+                secondImg: '../../static/img/pianownica-do-myjki.jpg',
+                secondImgTitle: 'PIANOWNICĘ DO MYJKI KARCGER K5',
+
                 title: 'MYJKA  KARCHER K5  FULL CONTROL HOME ',
                 description: 'Innowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy. Regulacja ciśnienia wody i dozowanie środka czyszczącego jest realizowana za pomocą przycisków +/-, a bieżące ustawienie pokazywane jest na wyświetlaczu LCD. Zestaw Home idealnie nadaje się do utrzymania czystości wokół domu.',
                 list1: [],
@@ -204,6 +204,11 @@ export default {
         text-align: center;
         padding: 6rem 1rem;
     }
+    &__header{
+        text-align: center;
+        padding-bottom: 5rem;
+        font-size: 3rem
+    }
 
     .slider{
         height: 100%;
@@ -225,6 +230,11 @@ export default {
                         margin: 0 auto;
                     }
                 }
+                .second-img{
+                    max-width: 50%;
+                    display: block;
+                    margin: 0 auto;
+                }
             }
             &__info{
                 width: calc(75% - 5rem);
@@ -241,6 +251,9 @@ export default {
                 .list{
                     padding-bottom: 3rem;
                     &__item{
+                        font-weight: 400 !important;
+                        text-decoration: none !important;
+                        font-size: 1.3rem !important;
                         &--basic{
                             text-shadow: none;
                         }

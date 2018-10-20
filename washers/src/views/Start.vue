@@ -30,6 +30,14 @@ export default {
   components: {Slider, OurOffert, ExampleOffert, BottomSection, AboutUs, Contact},
   data () {
     return {}
+  },
+  mounted(){
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#app").offset().top
+    }, 1000);
+  },
+  watch(){
+    console.log(window.pageYOffset)
   }
 }
 </script>

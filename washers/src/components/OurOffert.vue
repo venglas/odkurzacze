@@ -241,7 +241,37 @@ export default {
             },
 
             {
-                id: 3, img: '../../static/img/car.png',
+                id: 3, img: '../../static/img/tapicerka.jpg',
+                title: 'Czyszczenie tapicerki samochodowej',
+                subtitle: 'Czysta przyjemność z jazdy samochodem!',
+                description: 'Każdy z nas wie jak ciężko utrzymać porządek i czystość w naszych autach. Podróże, zakupy oraz codzienne używanie samochodu narażają tapicerkę na kurz, błoto, różnego rodzaju plamy, które trudno usunąć. Doprowadzenie naszego auta do porządku zabiera sporo czasu i wymaga pewnych nakładów finansowych na niezbędne środki czystości oraz chemię.',
+                subDescription: 'Korzystając z naszych usług prania tapicerki samochodowej zapewnisz sobie komfort jazdy a zaoszczędzony dzięki temu czas możesz miło spędzić z najbliższymi!',
+                offertCaption: 'Etapy prania tapicerki samochodowej:',
+                offertList: [
+                    'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
+                    'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
+                    'Suszenie - Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!',
+                    'Sam fotel – np. kierowcy od 40,00 zł',
+                    'Dwa fotele lub kanapa tylna od 60,00 zł',
+                    'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem) od 120,00 zł',
+                    'Podsufitka + mycie szyb od wewnątrz od 60,00 zł',
+                    'Odkurzanie od 30,00 zł',
+                    'Sprzątanie bagażnika od 20,00 zł',
+                    'Suszenie od 30,00 zł'
+                ],
+                time: 'Czas prania i suszenia to około od 3 do 5 godzin w zależności od wielkości pojazdu i stopnia zabrudzenia.',
+                info1: '',
+                price: '',
+                ifno2: ''
+            },
+
+            {
+                id: 4, img: '../../static/img/kaf4.png',
+                title: 'Wypożyczalnia Karcher',
+            },
+
+            {
+                id: 5, img: '../../static/img/dostawczy.jpg',
                 title: 'Dojazd do klienta',
                 subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
                 description: '',
@@ -255,11 +285,6 @@ export default {
                 info1: '',
                 price: '',
                 ifno2: ''
-            },
-
-            {
-                id: 4, img: '../../static/img/kaf4.png',
-                title: 'Wypożyczalnia Karcher',
             },
         ]
     }
@@ -290,6 +315,13 @@ export default {
                     scrollTop: $("#price-list").offset().top
                 }, 1000);
             break;
+
+            case 5:
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#offert5").offset().top
+                }, 1000);
+            break;
+
         }
     },
     // showModal(which){
@@ -377,7 +409,7 @@ export default {
         &__item{
             display: inline-block;
             vertical-align: top; //fix position of element
-            width: calc(25% - 4rem);
+            width: calc(22% - 4rem);
             margin: 0 2rem;
             height: 100%;
             position: relative;
@@ -399,11 +431,13 @@ export default {
                 }
             }
             @media(max-width: 1024px){
-                width: calc(25% - 4rem);
+                width: calc(20% - 4rem);
             }
             @media(max-width: 768px){
-                width: calc(33% - 4rem);
-                margin: 2rem 2rem;
+                width: calc(80% - 4rem);
+                margin: 2rem auto;
+                display: block;
+                height: fit-content;
             }
             @media(max-width: 425px){
                 display: block;

@@ -1,21 +1,22 @@
 <template>
-<div>
+<div v-if="isLoaded">
 
   <!-- <div class="contact-modal">
 
   </div> -->
 
-  <div class="phone-number" @click="showContact">
+  <div class="phone-number">
     <img src="../../static/img/icons/phone-contact.png" alt="">
     <a href="tel:694045198">694-045-198</a>
   </div>
 
   <div class="slider">
-      <div v-for="item in offert" class="slider__item">
-        <p class="title">{{ item.description }}</p>
-        <img :src="item.img" class="img">
+      <div v-for="item in sliderData" class="slider__item">
+        <p class="title">{{ item.title }}</p>
+        <img :src="item.image" class="img">
       </div>
   </div>
+
 </div>
 
 </template>
@@ -29,23 +30,41 @@ export default {
         // {id: 1, img: '../../static/img/slider/slide1.jpg', description: 'description of an item!'},
         {id: 2, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
         {id: 3, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
-      ]
+      ],
+      isLoaded: false,
+      sliderData: {},
     }
   },
   methods: {
-    showContac(){
-
-    }
   },
   mounted() {
-    $('.slider').slick({
-      infinite: true,
-      dots: true,
-      speed: 800,
-      autoplay: true,
-      prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
-      nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
+    let scope = this;
+
+    axios.get('http://localhost:8080/api/slider').then( function (response) {
+      scope.sliderData = response.data.data;
+      scope.isLoaded = true;
+      
+      if(scope.isLoaded === true){
+
+        setTimeout(() => {
+
+          $('.slider').slick({
+            infinite: true,
+            dots: true,
+            speed: 800,
+            autoplay: true,
+            prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
+            nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
+          });
+
+        }, 500);
+        
+      }
+
     });
+  },
+  created(){
+    
   }
 }
 </script>

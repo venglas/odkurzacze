@@ -35,6 +35,9 @@ export default {
     Start,
     AboutUs,
     Contact
+  },
+  data (){
+    return{}
   }
 }
 </script>

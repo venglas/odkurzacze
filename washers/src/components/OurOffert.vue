@@ -8,7 +8,7 @@
                 <img :src="item.img" alt="" class="item-img">
                 <div class="item-title">
                     <h2>{{item.title}}</h2>
-                    <h2 class="info">Kliknij aby wyświetlić szczegóły</h2>
+                    <h2 class="info">Zapoznaj się z ofertą i cennikiem</h2>
                 </div>
             </div>
         </div>
@@ -70,64 +70,6 @@
             </div>
         </div>
 
-
-
-
-        <!-- modal should be in new component -->
-        <!-- <div class="info-modal" v-for="modal in offert" :id="'modal'+modal.id"> -->
-
-            <!-- <img :src="closeIcon" alt="close icon" @click="closeModal(modal.id)" class="close-icon">
-            
-            <div class="section-top">
-                <h2>{{ modal.title }}</h2>
-                <h3>{{ modal.subtitle }}</h3>
-                <p>{{ modal.description }}</p>
-                <p v-html="modal.subDescription">{{ modal.subDescription }}</p>
-            </div>
-
-            <p class="offert-title">{{ modal.offertCaption }}</p>
-
-
-            <u class="info-modal-list">
-                <li v-for="modalList in modal.offertList" class="info-modal__item">
-                    {{ modalList }}
-                </li>
-            </u>
-
-            <h3 v-if="modal.id == 1">W ramach zakupu usługi gwarantujemy chemię oraz sprzęt niezbędny do sprzątania.</h3>
-
-            <div class="info-item">
-                <img :src="modal.iconTime" alt="calendar icon" class="info-item__photo">
-                <p class="info-item__description">{{ modal.time }}</p>
-            </div>
-
-            <div class="info-item" v-if="modal.info1 != ''">
-                <img :src="modal.iconOrder" alt="order icon" class="info-item__photo">
-                <p class="info-item__description">{{ modal.info1 }}</p>
-            </div>
-
-            <div class="info-item">
-                <img :src="modal.iconContact" alt="contact icon" class="info-item__photo">
-                <p class="info-item__description">
-                    <p>{{ telephone }} / {{ email }}</p>
-                </p>
-            </div>
-
-            <div class="info-item">
-                <img :src="modal.iconPrice" alt="price icon" class="info-item__photo">
-                <p class="info-item__description">
-                    <p>{{modal.price}}</p>
-                </p>
-            </div>
-
-            <ul class="info-modal-list info-modal-list--2">
-                <li v-for="modalList2 in modal.windowsClean" class="info-modal__item">
-                    {{modalList2}}
-                </li>
-            </ul>
-
-            <h3>{{ info2 }}</h3> -->
-        <!-- </div>  -->
     </div>
   </article>
 </template>
@@ -270,22 +212,22 @@ export default {
                 title: 'Wypożyczalnia Karcher',
             },
 
-            {
-                id: 5, img: '../../static/img/dostawczy.jpg',
-                title: 'Dojazd do klienta',
-                subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
-                description: '',
-                subDescription: '',
-                offertCaption: '',
-                offertList: [
-                    'Do 15km - 10zł',
-                    'Powyżej 15km - cena do uzgodnienia.'
-                ],
-                time: '',
-                info1: '',
-                price: '',
-                ifno2: ''
-            },
+            // {
+            //     id: 5, img: '../../static/img/dostawczy.jpg',
+            //     title: 'Dojazd do klienta',
+            //     subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
+            //     description: '',
+            //     subDescription: '',
+            //     offertCaption: '',
+            //     offertList: [
+            //         'Do 15km - 10zł',
+            //         'Powyżej 15km - cena do uzgodnienia.'
+            //     ],
+            //     time: '',
+            //     info1: '',
+            //     price: '',
+            //     ifno2: ''
+            // },
         ]
     }
   },
@@ -323,54 +265,7 @@ export default {
             break;
 
         }
-    },
-    // showModal(which){
-    //     $([document.documentElement, document.body]).animate({
-    //         scrollTop: $("#app").offset().top
-    //     }, 1000);
-        
-    //     $('body').css({overflow: 'hidden'});
-
-    //     switch(which){
-    //         case 1:
-    //             $('#modal'+which).css({display: 'block'})
-    //         break;
-
-    //         case 2:
-    //             $('#modal'+which).css({display: 'block'})
-    //         break;
-
-    //         case 3:
-    //             $('#modal'+which).css({display: 'block'})
-    //         break;
-
-    //         case 4:
-    //             this.$router.push('/Cennik');
-    //             $('body').css({overflowY: 'scroll'});
-    //         break;
-    //     }
-    // },
-    // closeModal(which){
-    //     $('body').css({overflowY: 'scroll'});
-
-    //     switch(which){
-    //         case 1:
-    //             $('#modal'+which).css({display: 'none'})
-    //         break;
-    //     }
-
-    //     switch(which){
-    //         case 2:
-    //             $('#modal'+which).css({display: 'none'})
-    //         break;
-    //     }
-
-    //     switch(which){
-    //         case 3:
-    //             $('#modal'+which).css({display: 'none'})
-    //         break;
-    //     }
-    // }
+    }
   }
 }
 </script>
@@ -409,7 +304,7 @@ export default {
         &__item{
             display: inline-block;
             vertical-align: top; //fix position of element
-            width: calc(22% - 4rem);
+            width: calc(25% - 3rem);
             margin: 0 2rem;
             height: 100%;
             position: relative;
@@ -446,8 +341,8 @@ export default {
             }
             .item-img{
                 width: 100%;
-                height: 20rem;
-                max-height: 20rem;
+                height: 30rem;
+                max-height: 30rem;
                 transition: filter ease-out 500ms;
             }
         }
@@ -542,59 +437,5 @@ export default {
     }
 
 }
-
-// .info-modal{
-//     display: none;
-//     width: 100vw;
-//     height: 100vh;
-//     position: absolute;
-//     background-color: rgb(68, 68, 68);
-//     top: 0;
-//     left: 0;
-//     z-index: 1999;
-//     padding: 5rem;
-//     color: #fff;
-//     font-size: 1.5rem;
-//     white-space: normal;
-
-//     .close-icon{
-//         position: absolute;
-//         top: 2rem;
-//         right: 5rem;
-//         cursor: pointer;
-//     }
-//     .section-top{
-//         text-align: center;
-//         font-size: 1.5rem;
-//         *{
-//             padding: 1rem 0;
-//         }
-//     }
-//     .offert-title{
-//         font-size: 1.7rem;
-//         padding: 2rem 0 1rem 0;
-//     }
-//     .info-modal-list{
-//         margin-left: 2rem;
-//         text-decoration: none;
-//         font-size: 1.5rem;
-//         &--2{
-//             li{
-//                 &:first-child{
-//                     list-style: none;
-//                     font-weight: 600;
-//                     margin-left: -2rem;
-//                 }
-//             }
-//         }
-//     }
-//     .info-item{
-//         padding: 1.5rem 0;
-//         display: flex;
-//         &__photo{
-//             margin-right: 1rem;
-//         }
-//     }
-// }
 
 </style>

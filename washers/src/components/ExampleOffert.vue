@@ -178,14 +178,16 @@ export default {
     }
   },
   mounted(){
-    $('#slider2').slick({
-        infinite: true,
-        dots: true,
-        speed: 800,
-        // autoplay: true,
-        prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
-        nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
-    });
+    // IF U UNCOMMENT THIS OUR OFFERT - WYPOZYCZALNIA KARCHER WILL BE DISPLAYING AS SLIDER
+
+    // $('#slider2').slick({
+    //     infinite: true,
+    //     dots: true,
+    //     speed: 800,
+    //     // autoplay: true,
+    //     prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
+    //     nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
+    // });
     }
 }
 </script>
@@ -212,7 +214,9 @@ export default {
 
     .slider{
         height: 100%;
+        
         .section-content{
+            margin-bottom: 8rem;
             &__header{
                 width: calc(25% - 1rem);
                 display: inline-block;

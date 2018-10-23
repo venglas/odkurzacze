@@ -27,16 +27,14 @@ export default {
   data () {
     return {
       offert: [
-        // {id: 1, img: '../../static/img/slider/slide1.jpg', description: 'description of an item!'},
-        {id: 2, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
-        {id: 3, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
+        // {id: 1, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
+        // {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
       ],
       isLoaded: false,
       sliderData: {},
     }
   },
-  methods: {
-  },
+  methods: {},
   mounted() {
     let scope = this;
 
@@ -57,15 +55,13 @@ export default {
             nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
           });
 
-        }, 500);
-        
+        }, 100); // this timeout is beacuse slick start rendering before data is in component
+
       }
 
     });
   },
-  created(){
-    
-  }
+  created(){}
 }
 </script>
 

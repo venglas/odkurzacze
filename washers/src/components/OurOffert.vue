@@ -128,18 +128,20 @@ export default {
             // },
 
             {
-                id: 1, img: '../../static/img/kaf2.png',
-                title: 'Pranie dywanów i wykładzin',
+                id: 1, img: '../../static/img/czyszczenie-dywanow.jpg',
+                title: 'Czyszczenie dywanów i wykładzin',
                 subtitle: 'Ciepły, miękki i czysty dywan!',
                 description: 'Czysty i ciepły dom to nie tylko lśniące okna, meble, sofa ale także dywan czy wykładzina. Codzienne użytkowanie zostawia po sobie bardzo widoczne, denerwujące plamy i ślady. Mamy na to skuteczny i wypróbowany sposób, skorzystaj i Ty z naszego doświadczenia!',
                 subDescription: 'Wypożyczymy, przyjedziemy i wypierzemy za Ciebie.',
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
-                    'Sztuczne od 5 zł /m2',
-                    'Wełniane od 6zł',
+                    'Sztuczne odkurzanie od 2,50 zł /m2',
+                    'Sztuczne czyszczenie od 9,50 zł /m2',
+                    'Wełniane odkurzanie od 2,50 zł',
+                    'Wełniane czyszczenie od 2,50 zł',
                     'SHAGGY tzw. Włochacze od 7 zł',
-                    'wykładzina do 20 m2 od 5 zł za m2',
-                    'wykładzina powyżej 20m2 od 4 zł za m2',
+                    'wykładzina do 20 m2 od 6 zł za m2',
+                    'wykładzina powyżej 20m2 od 5 zł za m2',
                     'wykładzina Ponad 100m i stałe zlecenia cena indywidualna'
                 ],
                 time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
@@ -150,25 +152,25 @@ export default {
             },
 
             {
-                id: 2, img: '../../static/img/kaf3.png',
-                title: 'Pranie tapicerki meblowej',
+                id: 2, img: '../../static/img/czyszczenie-tapicerki-meblowej.jpg',
+                title: 'Czyszczenie tapicerki meblowej',
                 subtitle: 'Wypoczynek i relaks!',
                 description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. Na proces czyszczenia składa się:',
                 subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, pranie zasadnicze odkurzaczem ekstrakcyjnym`,
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
-                    'Poduchy meblowe 10 – 15 zł',
-                    'Krzesła siedzisko 10 – 15 zł',
-                    'Krzesło: siedzisko + oparcie 15 – 25 zł',
-                    'Pufy meblowe I osobowe 15 – 25 zł',
-                    'Fotele biurowe 15 – 25 zł',
-                    'Fotele wypoczynkowe 60 – 80 zł',
-                    'Narożniki kuchenne 70 – 100 zł',
-                    'Wersalki / kanapy dziecięce 70 – 100 zł',
-                    'Kanapy II osobowe 120 – 150 zł',
-                    'Kanapy III osobowe 140 – 170 zł',
-                    'Kanapy (narożniki) IV osobowe 150 – 190 zł',
-                    'Kanapy (narożniki) V osobowe 180 – 200 zł',
+                    'Poduchy meblowe od 10 zł',
+                    'Krzesła siedzisko od 10 zł',
+                    'Krzesło: siedzisko + oparcie 15 zł',
+                    'Pufy meblowe I osobowe 15 zł',
+                    'Fotele biurowe od 15 zł',
+                    'Fotele wypoczynkowe od 60 zł',
+                    'Narożniki kuchenne od 70 zł',
+                    'Wersalki / kanapy dziecięce od 70 zł',
+                    'Kanapy II osobowe od 100 zł',
+                    'Kanapy III osobowe od 140 zł',
+                    'Kanapy (narożniki) IV osobowe od 150zł',
+                    'Kanapy (narożniki) V osobowe od 180 zł',
                     'Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.'
                 ],
                 iconTime: '../../static/img/icons/time-icon.png',
@@ -183,7 +185,7 @@ export default {
             },
 
             {
-                id: 3, img: '../../static/img/tapicerka.jpg',
+                id: 3, img: '../../static/img/czyszczenie-tapicerki-samochodowej.jpg',
                 title: 'Czyszczenie tapicerki samochodowej',
                 subtitle: 'Czysta przyjemność z jazdy samochodem!',
                 description: 'Każdy z nas wie jak ciężko utrzymać porządek i czystość w naszych autach. Podróże, zakupy oraz codzienne używanie samochodu narażają tapicerkę na kurz, błoto, różnego rodzaju plamy, które trudno usunąć. Doprowadzenie naszego auta do porządku zabiera sporo czasu i wymaga pewnych nakładów finansowych na niezbędne środki czystości oraz chemię.',
@@ -193,13 +195,13 @@ export default {
                     'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
                     'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
                     'Suszenie - Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!',
-                    'Sam fotel – np. kierowcy od 40,00 zł',
-                    'Dwa fotele lub kanapa tylna od 60,00 zł',
-                    'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem) od 120,00 zł',
-                    'Podsufitka + mycie szyb od wewnątrz od 60,00 zł',
-                    'Odkurzanie od 30,00 zł',
-                    'Sprzątanie bagażnika od 20,00 zł',
-                    'Suszenie od 30,00 zł'
+                    'Sam fotel – np. kierowcy od 40 zł',
+                    'Dwa fotele lub kanapa tylna od 60 zł',
+                    'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem) od 120 zł',
+                    'Podsufitka + mycie szyb od wewnątrz od 60 zł',
+                    'Odkurzanie od 30 zł',
+                    'Sprzątanie bagażnika od 20 zł',
+                    'Suszenie od 30 zł'
                 ],
                 time: 'Czas prania i suszenia to około od 3 do 5 godzin w zależności od wielkości pojazdu i stopnia zabrudzenia.',
                 info1: '',
@@ -208,7 +210,7 @@ export default {
             },
 
             {
-                id: 4, img: '../../static/img/kaf4.png',
+                id: 4, img: '../../static/img/wypozyczalnia-karcher.jpg',
                 title: 'Wypożyczalnia Karcher',
             },
 
@@ -399,19 +401,21 @@ export default {
         .subtitle{
             text-align: center;
             padding-bottom: 2rem;
+            font-size: 2rem;
         }
         .description{
             padding: 2rem 0;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
         .subdescription{
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             padding-bottom: 1rem;
         }
         .list{
             margin-left: 2rem;
             padding-bottom: 2.5rem;
+            font-size: 1.3rem;
         }
         // .price-info, .time-info, .order-info{
         //     .img{
@@ -432,6 +436,7 @@ export default {
                 display: inline-block;
                 width: calc(100% - 32px - 3rem);
                 margin-left: 2rem;
+                font-size: 1.3rem;
             }
         }
     }

@@ -28,7 +28,7 @@
                         <h3 class="list__title">
                             wyposażenie:
                         </h3>
-                        <li v-for="listItem in offert.composition">
+                        <li class="list__item" v-for="listItem in offert.composition">
                             {{ listItem }}
                         </li>
                     </ul>
@@ -69,75 +69,14 @@ export default {
         isMobile: false,
         exampleOffertData: [
             {
-                id: 1, img: '../../static/img/myjka-karcher-2.jpg',
-                title: 'MYJKA DO OKIEN KARCHER VW 2 PREMIUM',
-                description: 'Zapomnij o wielogodzinnych zmaganiach z myciem okien! Chcesz szybko umyć okna, lustra lub kafelki? To urządzenie jest stworzony z myślą o Tobie. Myjka WV 2 Premium BLACK przeznaczony jest do mycia wszelkiego rodzaju powierzchni szklanych, luster, a także fliz w domu.',
-                list1: [
-                    'okna, lustra, świetliki',
-                    'płytki, kafelki',
-                    'wszelkiego typu powierzchnie szklane, np. drzwi, blaty, kabiny prysznicowe',
-                    'płaskie, wodoodporne powierzchnie'
-                ],
-                priceList: [
-                    {title: '1 doba', price: '15 zł'},
-                    {title: 'weekend', price: '35 zł (piątek - poniedziałek)'},
-                    {title: 'kaucja zwrotna', price: '40 zł'}
-                ],
-                composition: [
-                    'wąska ssawka 170 mm',
-                    'ssawka 280 mm'
-                ]
-            },
-            
-            {
-                id: 3, img: '../../static/img/myjka-karcher.jpg',
-                secondImg: '../../static/img/pianownica-do-myjki.jpg',
-                secondImgTitle: 'PIANOWNICĘ DO MYJKI KARCGER K5',
-
-                title: 'MYJKA  KARCHER K5  FULL CONTROL HOME ',
-                description: 'Innowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy. Regulacja ciśnienia wody i dozowanie środka czyszczącego jest realizowana za pomocą przycisków +/-, a bieżące ustawienie pokazywane jest na wyświetlaczu LCD. Zestaw Home idealnie nadaje się do utrzymania czystości wokół domu.',
-                list1: [],
-                priceList: [
-                    {title: '1 doba', price: '60 zł'},
-                    {title: 'weekend', price: '90 zł (piątek – poniedziałek)'},
-                    {title: 'kaucja zwrotna', price:'150 zł'}
-                ],
-                composition: [
-                    'Pistolet wysokociśnieniowy, G 145 Q Full Control',
-                    'Lanca Vario Power',
-                    'Dysza rotacyjna',
-                    'Pianownica'
-                ]
-            },
-
-            {
-                id: 4, img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg',
-                title: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1 TACT Z FUNKCJĄ ZBIERANIA WODY',
-                description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza. Płaski falisty filtr Eco umożliwia zbieranie bardzo drobnego pyłu klasy M zapewniając skuteczną ochronę silnikowi. Nie wymaga demontażu w celu zbierania wody, jest łatwy w czyszczeniu.',
-                list1: [],
-                priceList: [
-                    {title: '1 doba', price: '60 zł'},
-                    {title: 'weekend', price: '95 zł (piątek – poniedziałek)'},
-                    {title: 'kaucja zwrotna', price: '100 zł'}
-                ],
-                composition: [
-                    'ssawka podłogowa',
-                    'ssawka szczelinowa',
-                    'ssawka samochodowa',
-                    'ssawka do tapicerki',
-                    'szczotka z naturalnego włosia'
-                ]
-            },
-
-            {
-                id: 5, img: '../../static/img/odkurzacz-puzzi.jpg',
+                id: 1, img: '../../static/img/odkurzacz-puzzi.jpg',
                 title: 'ODKURZACZ  PIORĄCY PUZZI  10/1',
                 description: 'Dzięki bogatemu wyposażeniu urządzenie Puzzi można stosować zarówno do czyszczenia wykładzin dywanowych jak i tapicerki samochodowej, meblowej oraz podłóg twardych. Doskonale sprawdza się w hotelach, biurowcach, firmach zajmujących się przewozem osób. W zależności od stopnia zabrudzenia powierzchni może pracować w jednym lub w dwóch przejściach roboczych. Pozostawia jedynie niewielką wilgoć, dzięki czemu powierzchnię można użytkować w krótkim czasie po przeprowadzeniu prac czyszczących.',
                 list1: [],
                 priceList: [
-                    {title: '1 doba', price: '50 zł'},
-                    {title: 'weekend', price: '89 zł (piątek – poniedziałek)'},
-                    {title: 'kaucja zwrotna', price: '150 zł'}
+                    {title: '1 doba', price: '55 zł'},
+                    {title: 'weekend', price: '85 zł (piątek – poniedziałek)'},
+                    {title: 'kaucja zwrotna', price: '100 zł'}
                 ],
                 composition: [
                     'Odkurzacz piorący Karcher Puzzi',
@@ -150,7 +89,47 @@ export default {
             },
 
             {
-                id: 6, img: '../../static/img/parownica-karcher.jpg',
+                id: 2, img: '../../static/img/odkurzacz-przemyslowy-karcher.jpg',
+                title: 'ODKURZACZ PRZEMYSŁOWY KARCHER NT 35/1 TACT Z FUNKCJĄ ZBIERANIA WODY',
+                description: 'Urządzenie jest przeznaczone do prac porządkowych w miejscach, gdzie do zapewnienia czystości potrzebne są wytrzymałe i uniwersalne urządzenia. Niesprzyjające warunki i duże obciążenie panujące podczas prac porządkowych w transporcie, motoryzacji, budownictwie, rolnictwie czy pracy rzemieślniczej nie stanowią żadnej przeszkody dla tego odkurzacza. Płaski falisty filtr Eco umożliwia zbieranie bardzo drobnego pyłu klasy M zapewniając skuteczną ochronę silnikowi. Nie wymaga demontażu w celu zbierania wody, jest łatwy w czyszczeniu.',
+                list1: [],
+                priceList: [
+                    {title: '1 doba', price: '55 zł'},
+                    {title: 'weekend', price: '85 zł (piątek – poniedziałek)'},
+                    {title: 'kaucja zwrotna', price: '100 zł'}
+                ],
+                composition: [
+                    'ssawka podłogowa',
+                    'ssawka szczelinowa',
+                    'ssawka samochodowa',
+                    'ssawka do tapicerki',
+                    'szczotka z naturalnego włosia'
+                ]
+            },
+
+            {
+                id: 3, img: '../../static/img/myjka-karcher.jpg',
+                secondImg: '../../static/img/pianownica-do-myjki.jpg',
+                secondImgTitle: 'PIANOWNICĘ DO MYJKI KARCGER K5',
+
+                title: 'MYJKA CIŚNIENIOWA KARCHER K5 FULL CONTROL',
+                description: 'Innowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy. Regulacja ciśnienia wody i dozowanie środka czyszczącego jest realizowana za pomocą przycisków +/-, a bieżące ustawienie pokazywane jest na wyświetlaczu LCD. Zestaw Home idealnie nadaje się do utrzymania czystości wokół domu.',
+                list1: [],
+                priceList: [
+                    {title: '1 doba', price: '60 zł'},
+                    {title: 'weekend', price: '95 zł (piątek – poniedziałek)'},
+                    {title: 'kaucja zwrotna', price:'100 zł'}
+                ],
+                composition: [
+                    'Pistolet wysokociśnieniowy, G 145 Q Full Control',
+                    'Lanca Vario Power',
+                    'Dysza rotacyjna',
+                    'Pianownica'
+                ]
+            },
+
+            {
+                id: 4, img: '../../static/img/parownica-karcher.jpg',
                 title: 'PAROWNICA  KARCHER  SC 4 ',
                 description: 'Parownica pozwoli Państwu na efektywne sprzątanie prawie każdej powierzchni bez konieczności użycia środków chemicznych. Gorąca para wodna dotrze w niedostępne zakamarki lub uciążliwe w utrzymaniu czystości miejsca. Dzięki udostępnionemu wyposażeniu nasza parownica znajdzie zastosowanie na powierzchniach wodoodpornych, zdezynfekuje przedmioty codziennego użytku oraz odświeży tekstylia. Urządzenie sprawdzi się w całym domu, a głównie w kuchni i łazience gdzie najtrudniej utrzymać czystość. Parownica Karcher pomoże Państwu w pracach takich jak np. czyszczenie fug, doczyszczanie zakamarków, mycie piekarnika, dezynfekcja wszelkich powierzchni, usuwanie kleju, gumy, plasteliny itd. To uniwersalne urządzenie przydatne w każdym domu, przyjazne domownikom, a w szczególności dzieciom i alergikom.',
                 list1: [],
@@ -166,6 +145,27 @@ export default {
                     'dysza podłogowa',
                     'szczotka okrągła do fug i ciężkich zabrudzeń dodatkowo 15,00 zł (klient otrzymuje nową którą zatrzymuje)',
                     'możliwość dokupienia szmatek dodatkowo 3,00 zł'
+                ]
+            },
+
+            {
+                id: 5, img: '../../static/img/myjka-karcher-2.jpg',
+                title: 'MYJKA DO OKIEN KARCHER VW 2 PREMIUM',
+                description: 'Zapomnij o wielogodzinnych zmaganiach z myciem okien! Chcesz szybko umyć okna, lustra lub kafelki? To urządzenie jest stworzony z myślą o Tobie. Myjka WV 2 Premium BLACK przeznaczony jest do mycia wszelkiego rodzaju powierzchni szklanych, luster, a także fliz w domu.',
+                list1: [
+                    'okna, lustra, świetliki',
+                    'płytki, kafelki',
+                    'wszelkiego typu powierzchnie szklane, np. drzwi, blaty, kabiny prysznicowe',
+                    'płaskie, wodoodporne powierzchnie'
+                ],
+                priceList: [
+                    {title: '1 doba', price: '20 zł'},
+                    {title: 'weekend', price: '40 zł (piątek - poniedziałek)'},
+                    {title: 'kaucja zwrotna', price: '50 zł'}
+                ],
+                composition: [
+                    'wąska ssawka 170 mm',
+                    'ssawka 280 mm'
                 ]
             }
         ]
@@ -209,7 +209,8 @@ export default {
     &__header{
         text-align: center;
         padding-bottom: 5rem;
-        font-size: 3rem
+        font-size: 4rem;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .3);
     }
 
     .slider{
@@ -227,6 +228,7 @@ export default {
                 }
 
                 .title{}
+                
                 .img{
                     max-width: 100%;
                     @media(max-width: 425px){
@@ -251,23 +253,25 @@ export default {
                 .head-description{
                     text-align: center;
                     padding-bottom: 3rem;
+                    font-size: 1.5rem;
                 }
                 .list{
                     padding-bottom: 3rem;
                     &__item{
                         font-weight: 400 !important;
                         text-decoration: none !important;
-                        font-size: 1.3rem !important;
+                        font-size: 1.35rem !important;
                         &--basic{
                             text-shadow: none;
                         }
                     }
                     &__title{
                         padding: 1rem 0;
+                        font-size: 1.4rem;
                     }
                 }
                 .table{
-                    width: 40rem;
+                    width: 55%;
                     text-align: left;
                     padding-bottom: 3rem;
                     @media(max-width: 425px){
@@ -281,7 +285,8 @@ export default {
                             padding-bottom: 1rem;
                             th{
                                 display: inline-block;
-                                width: calc(50% - 1rem)
+                                width: calc(50% - 1rem);
+                                font-size: 1.4rem;
                             }
                         }
                         &--horizontal{
@@ -290,6 +295,7 @@ export default {
                             width: calc(50% - 1rem);
                             td{
                                 display: block;
+                                font-size: 1.35rem;
                             }
                         }
                     }

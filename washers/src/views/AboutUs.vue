@@ -1,11 +1,19 @@
 <template>
-  <div class="about-us" id="about-us"> 
-      <div class="about-us__content">
-        <h1>O Nas</h1>
-        <h2 class="animation-1">Jesteśmy niewielką firmą podchodzącą do każdego zlecenia niezwykle poważnie i profesjonalnie.</h2>
-        <h2 class="animation-2">Dysponujemy wyłącznie sprzętem renomowanej firmy Karcher i stosujemy tylko oryginalną chemię czyszczącą.</h2>
-        <h2 class="animation-3">Większość naszych klientów pochodzi z poleceń.</h2>
-      </div>
+  <div class="" id="about-us">
+
+    <h1 class="about-us-title">O Firmie</h1>
+
+    <div class="about-us">
+          <img src="../../static/img/icons/logo.png" alt="" class="about-us__img">
+
+        <div class="about-us__content">
+            
+            <h2 class="animation-1">Jesteśmy niewielką firmą podchodzącą do każdego zlecenia niezwykle poważnie i profesjonalnie.</h2>
+            <h2 class="animation-2">Dysponujemy wyłącznie sprzętem renomowanej firmy Karcher i stosujemy tylko oryginalną chemię czyszczącą.</h2>
+            <h2 class="animation-3">Większość naszych klientów pochodzi z poleceń.</h2>
+        </div>
+    </div>
+      
   </div>
 </template>
 
@@ -26,6 +34,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import '../assets/scss/variables';
+
 @mixin animation-text($anim-delay){
     animation-name: fade-in-text;
     animation-delay: $anim-delay;
@@ -33,19 +43,41 @@ export default {
     animation-fill-mode: forwards;
 }
 
+.about-us-title{
+    color: $yellow;
+    font-size: 5.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 5rem;
+    opacity: 0;
+
+    @include animation-text(1000ms);
+
+    @media(max-width: 1440px){
+        font-size: 3.5rem;
+    }
+}
+
 .about-us{
     text-align: center;
-    padding: 5rem;
+    padding: 0 5rem 5rem 5rem;
     min-height: calc(100vh - 8vh - 380px);
     display: flex;
     align-items: center;
     justify-content: center;
 
+    &__img{
+        max-width: 25%;
+        opacity: 0;
+        @include animation-text(1000ms);
+    }
+
     &__content{
         line-height: 2;
         letter-spacing: 2px;
         h1, h2{
-            color: #fff;
+            // color: #fff;
+            color: $yellow;
             opacity: 0;
         }
         h1{

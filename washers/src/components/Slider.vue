@@ -1,5 +1,5 @@
 <template>
-<div v-if="isLoaded">
+<div v-if="!isLoaded">
 
   <!-- <div class="contact-modal">
 
@@ -10,10 +10,10 @@
     <a href="tel:694045198">694-045-198</a>
   </div>
 
-  <div class="slider">
-      <div v-for="item in sliderData" class="slider__item">
-        <p class="title">{{ item.title }}</p>
-        <img :src="item.image" class="img">
+  <div class="slider" id="slider1">
+      <div v-for="item in offert" class="slider__item">
+        <p class="title">{{ item.description }}</p>
+        <img :src="item.img" class="img">
       </div>
   </div>
 
@@ -27,8 +27,8 @@ export default {
   data () {
     return {
       offert: [
-        // {id: 1, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
-        // {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
+        {id: 1, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
+        {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
       ],
       isLoaded: false,
       sliderData: {},
@@ -42,23 +42,31 @@ export default {
       scope.sliderData = response.data.data;
       scope.isLoaded = true;
       
-      if(scope.isLoaded === true){
+      // if(scope.isLoaded === true){
 
-        setTimeout(() => {
+      //   setTimeout(() => {
 
-          $('.slider').slick({
-            infinite: true,
-            dots: true,
-            speed: 800,
-            autoplay: true,
-            prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
-            nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
-          });
+      //     $('.slider').slick({
+      //       infinite: true,
+      //       dots: true,
+      //       speed: 800,
+      //       autoplay: true,
+      //       prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
+      //       nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
+      //     });
 
-        }, 100); // this timeout is beacuse slick start rendering before data is in component
+      //   }, 100); // this timeout is beacuse slick start rendering before data is in component
 
-      }
+      // }
+    });
 
+    $('#slider1').slick({
+      infinite: true,
+      dots: true,
+      speed: 800,
+      autoplay: true,
+      prevArrow: '<button type="button" class="slick-prev pull-left"><img src="../../static/img/slider/left-arrow.png"></button>',
+      nextArrow: '<button type="button" class="slick-next pull-right"><img src="../../static/img/slider/right-arrow.png"></button>'
     });
   },
   created(){}

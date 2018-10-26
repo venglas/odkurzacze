@@ -36,6 +36,7 @@
                 </h4>
 
                 <ul class="list">
+                    <h2 class="list__title">Cennik:</h2>
                     <li class="list__item" v-for="listItem in singleOffert.offertList">
                         {{listItem}}
                     </li>
@@ -405,17 +406,24 @@ export default {
         }
         .description{
             padding: 2rem 0;
-            text-align: center;
-            font-size: 1.5rem;
+            text-align: left;
+            font-size: 1.7rem;
         }
         .subdescription{
-            font-size: 1.3rem;
+            font-size: 1.7rem;
             padding-bottom: 1rem;
         }
         .list{
             margin-left: 2rem;
             padding-bottom: 2.5rem;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            &__title{
+                font-size: 1.7rem;
+                padding: 2rem 0;
+            }
+            &__item{
+                padding: .35rem 0;
+            }
         }
         // .price-info, .time-info, .order-info{
         //     .img{

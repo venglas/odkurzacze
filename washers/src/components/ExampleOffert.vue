@@ -110,7 +110,7 @@ export default {
             {
                 id: 3, img: '../../static/img/myjka-karcher.jpg',
                 secondImg: '../../static/img/pianownica-do-myjki.jpg',
-                secondImgTitle: 'PIANOWNICĘ DO MYJKI KARCGER K5',
+                secondImgTitle: '',
 
                 title: 'MYJKA CIŚNIENIOWA KARCHER K5 FULL CONTROL',
                 description: 'Innowacyjna linia urządzeń wysokociśnieniowych Full Control Plus wyposażona w nowe pistolety, które ułatwiają dopasowanie ciśnienia do rodzaju czyszczonej powierzchni. Nowy pistolet wysokociśnieniowy Full Control Plus pozwala zapobiec uszkodzeniu wrażliwych powierzchni oraz zoptymalizować efekty czyszczenia, tak by za każdym razem rezultat prac był możliwie najlepszy. Regulacja ciśnienia wody i dozowanie środka czyszczącego jest realizowana za pomocą przycisków +/-, a bieżące ustawienie pokazywane jest na wyświetlaczu LCD. Zestaw Home idealnie nadaje się do utrzymania czystości wokół domu.',
@@ -251,7 +251,7 @@ export default {
                     width: 100%;
                 }
                 .head-description{
-                    text-align: center;
+                    text-align: left;
                     padding-bottom: 3rem;
                     font-size: 1.5rem;
                 }

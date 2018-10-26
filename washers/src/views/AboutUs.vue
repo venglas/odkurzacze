@@ -1,16 +1,17 @@
 <template>
   <div class="" id="about-us">
 
-    <h1 class="about-us-title">O Firmie</h1>
+    <!-- <h1 class="about-us-title">O Firmie</h1> -->
 
     <div class="about-us">
-          <img src="../../static/img/icons/logo.png" alt="" class="about-us__img">
+        <img src="../../static/img/icons/logo.png" alt="" class="about-us__img">
 
         <div class="about-us__content">
-            
+            <h1 class="about-us-title">O Firmie</h1>
             <h2 class="animation-1">Jesteśmy niewielką firmą podchodzącą do każdego zlecenia niezwykle poważnie i profesjonalnie.</h2>
-            <h2 class="animation-2">Dysponujemy wyłącznie sprzętem renomowanej firmy Karcher i stosujemy tylko oryginalną chemię czyszczącą.</h2>
-            <h2 class="animation-3">Większość naszych klientów pochodzi z poleceń.</h2>
+            <h2 class="animation-2">Specjalizujemy się w zakresie czyszczenia, prania dywanów, wykładzin, tapicerki meblowej oraz samochodowej, a także mycia kostki brukowej i elewacji.</h2>
+            <h2 class="animation-3">Dysponujemy wyłącznie sprzętem renomowanej firmy Karcher i stosujemy tylko oryginalną chemię czyszczącą. Większość naszych klientów pochodzi z poleceń.</h2>
+            <h2 class="animation-4">Nasza firma nie jest płatnikiem podatku VAT</h2>
         </div>
     </div>
       
@@ -75,6 +76,8 @@ export default {
     &__content{
         line-height: 2;
         letter-spacing: 2px;
+        text-align: left;
+        padding-left: 4rem;
         h1, h2{
             // color: #fff;
             color: $yellow;
@@ -111,6 +114,9 @@ export default {
         }
         .animation-3{
            @include animation-text(4000ms);
+        }
+        .animation-4{
+            @include animation-text(5000ms);
         }
 
         @keyframes fade-in-text {

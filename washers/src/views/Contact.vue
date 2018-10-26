@@ -77,6 +77,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: left;
 
     &__content{
         line-height: 2;

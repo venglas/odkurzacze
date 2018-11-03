@@ -55,7 +55,7 @@ export default {
     @include animation-text(1000ms);
 
     @media(max-width: 1440px){
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -88,13 +88,14 @@ export default {
             @include animation-text(1000ms);
 
             @media(max-width: 1440px){
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
         }
         h2{
             font-size: 3rem;
+            line-height: 2.5;
             @media(max-width: 1440px){
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             @media(max-width: 768px){

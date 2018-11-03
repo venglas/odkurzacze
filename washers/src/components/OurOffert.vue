@@ -27,13 +27,22 @@
                     {{ singleOffert.subtitle }}
                 </h2>
 
-                <h4 class="description">
-                    {{singleOffert.description }}
+                <h4 class="description" v-html="singleOffert.description">
+                    <!-- {{singleOffert.description }} -->
                 </h4>
 
                 <h4 class="subdescription">
                     {{ singleOffert.subDescription }}
                 </h4>
+
+                <ul class="list list--etaps" v-if="singleOffert.offertInfo">
+                    <h4 class="subdescription subdescription--etaps">Etapy prania tapicerki samochodowej:</h4>
+                    <li class="list__item list__item--etaps" v-for="item in singleOffert.offertInfo">
+                        <h2>{{ item.title }}</h2>
+                        <p>{{ item.description }}</p>
+                        
+                    </li>
+                </ul>
 
                 <ul class="list">
                     <h2 class="list__title">Cennik:</h2>
@@ -141,8 +150,8 @@ export default {
                     'Wełniane odkurzanie od 2,50 zł',
                     'Wełniane czyszczenie od 2,50 zł',
                     'SHAGGY tzw. Włochacze od 7 zł',
-                    'wykładzina do 20 m2 od 6 zł za m2',
-                    'wykładzina powyżej 20m2 od 5 zł za m2',
+                    'wykładzina do 20 m2 od 6 zł za /m2',
+                    'wykładzina powyżej 20m2 od 5 zł /m2',
                     'wykładzina Ponad 100m i stałe zlecenia cena indywidualna'
                 ],
                 time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
@@ -156,8 +165,8 @@ export default {
                 id: 2, img: '../../static/img/czyszczenie-tapicerki-meblowej.jpg',
                 title: 'Czyszczenie tapicerki meblowej',
                 subtitle: 'Wypoczynek i relaks!',
-                description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. Na proces czyszczenia składa się:',
-                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, pranie zasadnicze odkurzaczem ekstrakcyjnym`,
+                description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. <br /> <br /> Na proces czyszczenia składa się:',
+                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, oraz pranie zasadnicze odkurzaczem ekstrakcyjnym.`,
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
                     'Poduchy meblowe od 10 zł',
@@ -192,6 +201,11 @@ export default {
                 description: 'Każdy z nas wie jak ciężko utrzymać porządek i czystość w naszych autach. Podróże, zakupy oraz codzienne używanie samochodu narażają tapicerkę na kurz, błoto, różnego rodzaju plamy, które trudno usunąć. Doprowadzenie naszego auta do porządku zabiera sporo czasu i wymaga pewnych nakładów finansowych na niezbędne środki czystości oraz chemię.',
                 subDescription: 'Korzystając z naszych usług prania tapicerki samochodowej zapewnisz sobie komfort jazdy a zaoszczędzony dzięki temu czas możesz miło spędzić z najbliższymi!',
                 offertCaption: 'Etapy prania tapicerki samochodowej:',
+                offertInfo: [
+                    {id: 1, title: 'Odkurzanie', description: 'Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz'},
+                    {id: 2, title: 'Pranie', description: 'Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.'},
+                    {id: 3, title: 'Suszenie', description: 'Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!'}
+                ],
                 offertList: [
                     'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
                     'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
@@ -344,8 +358,8 @@ export default {
             }
             .item-img{
                 width: 100%;
-                height: 30rem;
-                max-height: 30rem;
+                height: 25rem;
+                max-height: 25rem;
                 transition: filter ease-out 500ms;
             }
         }
@@ -412,11 +426,18 @@ export default {
         .subdescription{
             font-size: 1.7rem;
             padding-bottom: 1rem;
+            &--etaps{
+                text-decoration: underline;
+                padding: 3rem 0 2rem 0;
+            }
         }
         .list{
             margin-left: 2rem;
             padding-bottom: 2.5rem;
             font-size: 1.5rem;
+            &--etaps{
+                font-size: 1.2rem;
+            }
             &__title{
                 font-size: 1.7rem;
                 padding: 2rem 0;

@@ -11,9 +11,14 @@
   </div>
 
   <div class="slider" id="slider1">
-      <div v-for="item in offert" class="slider__item">
+      <!-- <div v-for="item in offert" class="slider__item">
         <p class="title">{{ item.description }}</p>
         <img :src="item.img" class="img">
+      </div> -->
+
+      <div v-for="item in offert" v-bind:style="{backgroundImage: 'url('+item.img+')'}" style="background-size: cover; background-position: center" class="slider__item">
+        <p class="title">{{ item.description }}</p>
+        <!-- <img :src="item.img" class="img"> -->
       </div>
   </div>
 
@@ -28,7 +33,11 @@ export default {
     return {
       offert: [
         {id: 1, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
-        {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
+        {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'},
+
+        // {id: 1, img: '../../static/img/slider/slider1.jpg', description: 'description of an item'},
+        // {id: 2, img: '../../static/img/slider/slider2.jpg', description: 'description of an item'},
+        // {id: 3, img: '../../static/img/slider/slider3.jpg', description: 'description of an item'},
       ],
       isLoaded: false,
       sliderData: {},

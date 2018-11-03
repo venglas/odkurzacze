@@ -1,23 +1,21 @@
 <template>
   <article class="bottom-section">
-      
-      <div class="content">
-        <img src="../../static/img/car.png" alt="auto dostawcze" class="content__img" id="car">
-        <!-- <h2 class="content__title">Dojazd do klienta na terenie całego Śląska</h2> -->
-        <h2 class="content__title">{{ title }}</h2>
-      </div>
+        
+    <img src="../../static/img/car.png" alt="auto dostawcze" class="img" id="car">
+    <div class="content">
 
-      <div class="spacer">
-        <div class="spacer-wrapper">
-          <h2>{{ subtitle }}</h2>
+      <h2 class="content__title">{{ title }}</h2>
+      <h2 class="content__subtitle">{{ subtitle }}</h2>
 
-          <ul class="list">
-            <li class="list__item" v-for="item in info">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ul class="list">
+        <li class="list__item" v-for="item in info">
+          {{ item }}
+        </li>
+      </ul>
+
+    </div>
+    
+
   </article>
 </template>
 
@@ -29,8 +27,8 @@ export default {
       title: 'Dojazd do klienta',
       subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
       info: [
-        'Do 15km - 10zł',
-        'Powyżej 15km - cena do uzgodnienia.'
+        'Do 15 km gratis',
+        'Powyżej 15 km - cena do uzgodnienia.'
       ],
     }
   },
@@ -52,96 +50,107 @@ export default {
 @import '../assets/scss/variables';
 
 .bottom-section{
-  height: 400px;
-}
-.content, .spacer{
-  height: 50%;
-}
-.content{
-  position: relative;
-  &__title{
-    position: absolute;
-    right: 5%;
-    top: 45%;
-    color: #fff;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    @media(max-width: 768px){
-      top: 25%;
-    }
-    @media(max-width: 425px){
-      right: 0;
-      text-align: center;
-      width: 100%;
-    }
-    @media(max-width: 375px){
-      font-size: 1.5rem;
-    }
-  }
-  &__img{
-    height: 100%;
-    width: auto;
-    margin-left: 5%;
-    position: absolute;
-    top: 20%;
-    
-    @media(max-width: 425px){
-      max-width: 100%;
-       margin-left: 0;
-      top: 45%;
-      height: auto;
-    }
-  }
-  .carAnimation{
-    animation-name: carDrive;
-    animation-duration: 3000ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-  }
-  @keyframes carDrive {
-    0%{transform: none}
-    100%{transform: translateX(195%)}
-  }
-  @media(max-width: 1440px){
-    @keyframes carDrive {
-      0%{transform: none}
-      100%{transform: translateX(100%)}
-    }
-  }
-  @media(max-width: 1024px){
-    @keyframes carDrive {
-      0%{transform: none}
-      100%{transform: translateX(40%)}
-    }
-  }
-  @media(max-width: 980px){
-    @keyframes carDrive {
-      0%{transform: none}
-      100%{transform: none}
-    }
-  }
-}
-.spacer{
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
   background-color: $yellow;
-  // position: relative;
-  .spacer-wrapper{
+  text-align: center;
+  position: relative;
+
+  .img{
+    height: 100%;
+  }
+  .content{
     position: absolute;
+    top: 10%;
     right: 5%;
-    // top: 10%;
-    padding-top: 5rem;
-    h2{
+
+    &__title{
+      font-size: 3rem;
+      padding: 1rem;
+    }
+    &__subtitle{
       font-size: 1.8rem;
-      padding-bottom: 5px;
     }
     .list{
-      text-align: center;
-      list-style-type: none;
       font-size: 1.5rem;
-      &__item{
-        padding-bottom: 5px;
-      }
+      margin-left: 2rem;
+      text-align: left;
+      padding-top: 1rem;
     }
   }
+}
+
+
+
+// .content{
+//   position: relative;
+//   &__title{
+//     position: absolute;
+//     right: 5%;
+//     top: 45%;
+//     color: #fff;
+//     font-size: 2.5rem;
+//     text-transform: uppercase;
+//     letter-spacing: 2px;
+//     @media(max-width: 768px){
+//       top: 25%;
+//     }
+//     @media(max-width: 425px){
+//       right: 0;
+//       text-align: center;
+//       width: 100%;
+//     }
+//     @media(max-width: 375px){
+//       font-size: 1.5rem;
+//     }
+//   }
+//   //uncomment this style if u wanna see animation with car (slide from left to right)
+//   .carAnimation{
+//     // animation-name: carDrive;
+//     // animation-duration: 3000ms;
+//     // animation-fill-mode: forwards;
+//     // animation-timing-function: ease-in;
+//   }
+//   @keyframes carDrive {
+//     0%{transform: none}
+//     100%{transform: translateX(195%)}
+//   }
+//   @media(max-width: 1440px){
+//     @keyframes carDrive {
+//       0%{transform: none}
+//       100%{transform: translateX(100%)}
+//     }
+//   }
+//   @media(max-width: 1024px){
+//     @keyframes carDrive {
+//       0%{transform: none}
+//       100%{transform: translateX(40%)}
+//     }
+//   }
+//   @media(max-width: 980px){
+//     @keyframes carDrive {
+//       0%{transform: none}
+//       100%{transform: none}
+//     }
+//   }
+// }
+.spacer{
+  background-color: $yellow;
+  right: 5%;
+  padding-top: 5rem;
+  h2{
+    font-size: 1.8rem;
+    padding-bottom: 5px;
+  }
+  .list{
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.5rem;
+    &__item{
+      padding-bottom: 5px;
+    }
+  }
+
 }
 </style>

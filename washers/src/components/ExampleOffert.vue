@@ -6,7 +6,7 @@
         <div class="slider" id="slider2">
             <div class="section-content" v-for="offert in exampleOffertData">
                 <div class="section-content__header">
-                    <h2 class="title">{{ offert.title }}</h2>
+                    <!-- <h2 class="title">{{ offert.title }}</h2> -->
                     <img :src="offert.img" alt="" class="img">
 
                     <h2 style="padding-top: 2rem; text-align: center">{{offert.secondImgTitle}}</h2>
@@ -14,6 +14,8 @@
                 </div>
 
                 <div class="section-content__info">
+                    <h2 class="title-header">{{ offert.title }}</h2>
+
                     <h3 class="head-description">{{ offert.description }}</h3>
                     <ul class="list" v-if="offert.list1.length > 1">
                         <h3 class="list__title">
@@ -249,6 +251,12 @@ export default {
                 @media(max-width: 425px){
                     display: block;
                     width: 100%;
+                }
+                .title-header{
+                    padding: 2rem 0;
+                    text-align: center;
+                    font-size: 2.2rem;
+                    text-decoration: underline;
                 }
                 .head-description{
                     text-align: left;

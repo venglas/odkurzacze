@@ -44,10 +44,24 @@
                     </li>
                 </ul>
 
-                <ul class="list">
+                <ul class="list" v-if="singleOffert.offertList">
                     <h2 class="list__title">Cennik:</h2>
                     <li class="list__item" v-for="listItem in singleOffert.offertList">
                         {{listItem}}
+                    </li>
+                </ul>
+
+                <ul class="list list--custom" v-if="singleOffert.offertList2">
+                    <h2 class="list__title">Cennik:</h2>
+                    <li class="list__item list__item--offert-list" v-for="listItem2 in singleOffert.offertList2">
+                        <ul>
+                            <h2>{{listItem2.type}}</h2>
+
+                            <li class="list__item list__item--inside" v-for="listPoint in listItem2.items">
+                                <p> <span> {{listPoint.type}} </span> <span>{{listPoint.price}}</span> </p>
+                            </li>
+                        </ul>
+                
                     </li>
                 </ul>
 
@@ -98,62 +112,35 @@ export default {
         iconPrice: '../../static/img/icons/coin-icon-black.png',
 
         offert: [
-            // {
-            //     id: 1, img: '../../static/img/kaf1.png',
-            //     title: 'SPRZĄTANIE BIUR',
-            //     subtitle: 'Czyste biuro czysta przyjemność !',
-            //     description: 'Zbliża się koniec pracy a na biurku w dalszym ciągu piętrzą się dokumenty, kuchnia pełna brudnych naczyń, pełne kosze, zadeptana wykładzina i zamiast cieszyć się wolnym popołudniem martwisz się ile jeszcze czasu musisz poświęcić na uporządkowanie biura.',
-            //     subDescription: 'Skontaktuj się z nami – chętnie zadbamy o porządek w Twoim biurze i domu.',
-            //     offertCaption: 'Przykładowa usługa sprzątania biura obejmuje:',
-            //     offertList: [
-            //         'sprzątanie powierzchni biurka',
-            //         'odkurzanie wykładzin',
-            //         'opróżnianie koszy',
-            //         'wycieranie półek, szaf',
-            //         'mycie podłogi',
-            //         'sprzątanie pomieszczeń socjalnych i WC,',
-            //         'wycieranie grzejników oświetlenia, itp.',
-            //         'okresowe mycie pionowych i poziomych powierzchni mebli i drzwi',
-            //         'okresowe wycieranie koszy oraz stelaży foteli i biurek',
-            //         'okresowe wycieranie kurzu z miejsc usytuowanych najwyżej (górne powierzchnie wysokich szaf, ościeżnice drzwi i okien, górne powierzchnie drzwi',
-            //         'mycie okien (raz na 6 miesięcy, wycena indywidualna)'
-            //     ],
-            //     iconTime: '../../static/img/icons/time-icon.png',
-            //     iconOrder: '../../static/img/icons/order-icon.png',
-            //     iconContact: '../../static/img/icons/contact-icon.png',
-            //     iconPrice: '../../static/img/icons/money-icon.png',
-            //     time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
-            //     info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
-            //     price: 'godzina sprzątania 35zł',
-            //     windowsClean: [
-            //         'Cennik mycia okien:',
-            //         'okno jednoskrzydłowe od 10 zł',
-            //         'okno dwuskrzydłowe od 15 zł',
-            //         'okno trzyskrzydłowe od 25 zł',
-            //         'drzwi balkonowe od 25 zł',
-            //         'drewniane starego typu – rozkręcane, podwójne wycena indywidualna',
-            //         'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem sprzątania.'
-            //     ],
-            //     ifno2: 'Uwaga: do ceny należy doliczyć ustawową stawkę VAT w wysokości 23%/nie jesteśmy płatnikiem VAT'
-            // },
-
             {
                 id: 1, img: '../../static/img/czyszczenie-dywanow.jpg',
                 title: 'Czyszczenie dywanów i wykładzin',
                 subtitle: 'Ciepły, miękki i czysty dywan!',
-                description: 'Czysty i ciepły dom to nie tylko lśniące okna, meble, sofa ale także dywan czy wykładzina. Codzienne użytkowanie zostawia po sobie bardzo widoczne, denerwujące plamy i ślady. Mamy na to skuteczny i wypróbowany sposób, skorzystaj i Ty z naszego doświadczenia!',
-                subDescription: 'Wypożyczymy, przyjedziemy i wypierzemy za Ciebie.',
+                description: 'Czysty i ciepły dom to nie tylko lśniące okna, meble, sofa ale także dywan czy wykładzina. Codzienne użytkowanie zostawia po sobie bardzo widoczne, denerwujące plamy i ślady. Skorzystaj z naszego doświadczenia mamy na to skuteczny i wypróbowany sposób.',
+                subDescription: 'Wypożyczymy lub przyjedziemy i wypierzemy za Ciebie.',
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
-                offertList: [
-                    'Sztuczne odkurzanie od 2,50 zł /m2',
-                    'Sztuczne czyszczenie od 9,50 zł /m2',
-                    'Wełniane odkurzanie od 2,50 zł',
-                    'Wełniane czyszczenie od 2,50 zł',
-                    'SHAGGY tzw. Włochacze od 7 zł',
-                    'wykładzina do 20 m2 od 6 zł za /m2',
-                    'wykładzina powyżej 20m2 od 5 zł /m2',
-                    'wykładzina Ponad 100m i stałe zlecenia cena indywidualna'
+                offertList2: [
+                    {id: 1, type: 'Dywany sztuczne', items: [
+                            {type: 'Odkurzanie', price: '2,50 zł / m2'},
+                            {type: 'Czyszczenie', price: '9,50 zł / m2'}
+                        ]
+                    },
+
+                    {id: 2, type: 'Dywany wełniane', items: [
+                            {type: 'Odkurzanie', price: '2,50 zł / m2'},
+                            {type: 'Czyszczenie', price: '11,00 zł / m2'}
+                        ]
+                    },
+
+                    {id: 3, type: 'Wykładziny', items: [
+                            {type: 'Do 20 m2', price: '6,00 zł / m2'},
+                            {type: 'Powyżej 20 m2', price: '5,00 zł / m2'},
+                            {type: 'Ponad 100m i stałe zlecenia', price: 'cena indywidualna'}
+                        ]
+                    },
+
                 ],
+
                 time: 'Biorąc pod uwagę komfort użytkowników biura, sprzątanie odbywa się po godzinach jego urzędowania, zgodnie z czasem zakontraktowanym i uzgodnionym z Klientem. Rozpoczęcie prac sprzątających odbywa się najwcześniej o godzinie 16.30.',
                 info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem jego oczekiwań oraz dogodnego terminu.',
                 price: 'Cena jest zależna od czyszczonej powierzchni. W przypadku biur, obiektów usługowych i innych firm, które potrzebują regularnych usług prania wykładzin i dywanów zapraszamy do kontaktu telefonicznego. Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.',
@@ -358,8 +345,8 @@ export default {
             }
             .item-img{
                 width: 100%;
-                height: 25rem;
-                max-height: 25rem;
+                height: 23rem;
+                max-height: 23rem;
                 transition: filter ease-out 500ms;
             }
         }
@@ -435,6 +422,9 @@ export default {
             margin-left: 2rem;
             padding-bottom: 2.5rem;
             font-size: 1.5rem;
+            &--custom{
+                list-style-type: none;
+            }
             &--etaps{
                 font-size: 1.2rem;
             }
@@ -444,6 +434,20 @@ export default {
             }
             &__item{
                 padding: .35rem 0;
+                &--offert-list{
+                    h2{
+                        font-size: 1.5rem;
+                        padding: 1rem 0;
+                    }
+                }
+                &--inside{
+                    margin-left: 2rem;
+                    p{
+                        width: 40%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
             }
         }
         // .price-info, .time-info, .order-info{

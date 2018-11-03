@@ -9,13 +9,13 @@
         <img src="../../static/img/icons/mobile-menu.png" alt="mobile menu icon">
       </div>
       <ul class="list">
-        <li class="list__item" @click="goTo('start')"> <span>Start</span></li>
-        <li class="list__item" @click="goTo('about-us')"> <span>O firmie</span></li>
-        <li class="list__item" @click="goTo('offert')"> <span>Oferta i Cennik</span></li>
-        <!-- <li class="list__item" @click="goTo('price-list')"> <span>Cennik</span></li> -->
-        <li class="list__item" @click="goTo('contact')"> <span>Kontakt</span></li>
-        <!-- <li class="list__item" @click="goTo('gallery')"> <span>galeria</span></li> -->
-        <li class="list__item"> <a href="https://www.facebook.com/Odkurza-Czary-274633909844583/?modal=admin_todo_tour" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
+        <li class="list__item list__item--menu" @click="goTo('start')"> <span>Start</span></li>
+        <li class="list__item list__item--menu" @click="goTo('about-us')"> <span>O firmie</span></li>
+        <li class="list__item list__item--menu" @click="goTo('offert')"> <span>Oferta i Cennik</span></li>
+        <!-- <li class="list__item list__item--menu" @click="goTo('price-list')"> <span>Cennik</span></li> -->
+        <li class="list__item list__item--menu" @click="goTo('contact')"> <span>Kontakt</span></li>
+        <!-- <li class="list__item list__item--menu" @click="goTo('gallery')"> <span>galeria</span></li> -->
+        <li class="list__item list__item--menu"> <a href="https://www.facebook.com/Odkurza-Czary-274633909844583/?modal=admin_todo_tour" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
       </ul>
     </nav>
   </header>
@@ -65,7 +65,7 @@ export default {
       let activeMenuStyle = {};
 
       if(window.innerWidth > 425){
-        $('.list__item').css(this.unactiveMenuItemStyle);
+        $('.list__item--menu').css(this.unactiveMenuItemStyle);
         activeMenuStyle = this.activeMenuItemStyle; 
       }
       
@@ -75,7 +75,7 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#app").offset().top
           }, 1000);
-          $('.list__item:nth-child(1)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(1)').css(activeMenuStyle);
         break;
 
         case 'about-us':
@@ -83,7 +83,7 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#about-us").offset().top
           }, 1000);
-          $('.list__item:nth-child(2)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(2)').css(activeMenuStyle);
         break;
 
         case 'offert':
@@ -91,7 +91,7 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#our-offert").offset().top
           }, 1000);
-          $('.list__item:nth-child(3)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(3)').css(activeMenuStyle);
         break;
 
         case 'price-list':
@@ -99,7 +99,7 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#price-list").offset().top
           }, 1000);
-          $('.list__item:nth-child(4)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(4)').css(activeMenuStyle);
         break;
 
         case 'contact':
@@ -107,12 +107,12 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#contact").offset().top
           }, 1000);
-          $('.list__item:nth-child(5)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(5)').css(activeMenuStyle);
         break;
 
         case 'gallery':
           this.$router.push('/Galeria');
-          $('.list__item:nth-child(6)').css(activeMenuStyle);
+          $('.list__item--menu:nth-child(6)').css(activeMenuStyle);
         break;
       }
 

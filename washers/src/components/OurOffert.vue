@@ -33,6 +33,12 @@
 
                 <h4 class="subdescription">
                     {{ singleOffert.subDescription }}
+
+                    <ul v-if="singleOffert.etaps" style="margin-left: 2rem; list-style-type: decimal">
+                        <li v-for="item in singleOffert.etaps">
+                            {{ item }}
+                        </li>
+                    </ul>
                 </h4>
 
                 <ul class="list list--etaps" v-if="singleOffert.offertInfo">
@@ -47,7 +53,9 @@
                 <ul class="list" v-if="singleOffert.offertList">
                     <h2 class="list__title">Cennik:</h2>
                     <li class="list__item" v-for="listItem in singleOffert.offertList">
-                        {{listItem}}
+                       <p style="width: 60%; display: flex; justify-content: space-between;">
+                           <span>{{ listItem.item}} </span> <span> {{ listItem.price }}</span>
+                       </p>
                     </li>
                 </ul>
 
@@ -152,23 +160,25 @@ export default {
                 id: 2, img: '../../static/img/czyszczenie-tapicerki-meblowej.jpg',
                 title: 'Czyszczenie tapicerki meblowej',
                 subtitle: 'Wypoczynek i relaks!',
-                description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek Zapraszamy do skorzystania z naszej oferty czyszczenie mebli. Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. <br /> <br /> Na proces czyszczenia składa się:',
-                subDescription: `faza odplamiania specjalnymi, dostosowanymi do plam środkami, oraz pranie zasadnicze odkurzaczem ekstrakcyjnym.`,
+                description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek, zapraszamy do skorzystania z naszej oferty czyszczenia tapicerki meblowej. <br /> <br /> Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. <br /> <br /> Na proces czyszczenia składa się:',
+                // subDescription: ['Faza odplamiania specjalnymi, dostosowanymi do plam środkami', 'Pranie zasadnicze odkurzaczem ekstrakcyjnym', 'Proces płukania gwarantujący usunięcie resztek zabrudzenia'],
+                etaps: ['Faza odplamiania specjalnymi, dostosowanymi do plam środkami', 'Pranie zasadnicze odkurzaczem ekstrakcyjnym', 'Proces płukania gwarantujący usunięcie resztek zabrudzenia'],
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
-                    'Poduchy meblowe od 10 zł',
-                    'Krzesła siedzisko od 10 zł',
-                    'Krzesło: siedzisko + oparcie 15 zł',
-                    'Pufy meblowe I osobowe 15 zł',
-                    'Fotele biurowe od 15 zł',
-                    'Fotele wypoczynkowe od 60 zł',
-                    'Narożniki kuchenne od 70 zł',
-                    'Wersalki / kanapy dziecięce od 70 zł',
-                    'Kanapy II osobowe od 100 zł',
-                    'Kanapy III osobowe od 140 zł',
-                    'Kanapy (narożniki) IV osobowe od 150zł',
-                    'Kanapy (narożniki) V osobowe od 180 zł',
-                    'Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.'
+                    {item: 'Poduchy meblowe', price: 'od 10 zł'},
+                    {item: 'Krzesła siedzisko', price: 'od 10 zł'},
+                    {item: 'Krzesło: siedzisko + oparcie', price: '15 zł'},
+                    {item: 'Pufy meblowe I osobowe', price: '15 zł'},
+                    {item: 'Fotele biurowe', price: 'od 15 zł'},
+                    {item: 'Fotele wypoczynkowe', price: 'od 60 zł'},
+                    {item: 'Narożniki kuchenne', price: 'od 70 zł'},
+                    {item: 'Wersalki / kanapy dziecięce', price: 'od 70 zł'},
+                    {item: 'Kanapy II osobowe', price: 'od 100 zł'},
+
+                    {item: 'Kanapy III osobowe', price: 'od 140 zł'},
+                    {item: 'Kanapy (narożniki) IV osobowe', price: 'od 150 zł'},
+                    {item: 'Kanapy (narożniki) V osobowe', price: 'od 180 zł'},
+                    // {item: 'Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.', price: ''},
                 ],
                 iconTime: '../../static/img/icons/time-icon.png',
                 iconOrder: '../../static/img/icons/order-icon.png',
@@ -176,7 +186,7 @@ export default {
                 iconPrice: '../../static/img/icons/money-icon.png',
                 time: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem dogodnego terminu.',
                 info1: '',
-                price: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania.',
+                price: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania. Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.',
                 windowsClean: [],
                 ifno2: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania.'
             },
@@ -189,25 +199,27 @@ export default {
                 subDescription: 'Korzystając z naszych usług prania tapicerki samochodowej zapewnisz sobie komfort jazdy a zaoszczędzony dzięki temu czas możesz miło spędzić z najbliższymi!',
                 offertCaption: 'Etapy prania tapicerki samochodowej:',
                 offertInfo: [
-                    {id: 1, title: 'Odkurzanie', description: 'Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz'},
+                    {id: 1, title: 'Odkurzanie', description: 'Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach, boczki oraz podłogę samochodu.'},
                     {id: 2, title: 'Pranie', description: 'Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.'},
                     {id: 3, title: 'Suszenie', description: 'Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!'}
                 ],
                 offertList: [
-                    'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
-                    'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
-                    'Suszenie - Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!',
-                    'Sam fotel – np. kierowcy od 40 zł',
-                    'Dwa fotele lub kanapa tylna od 60 zł',
-                    'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem) od 120 zł',
-                    'Podsufitka + mycie szyb od wewnątrz od 60 zł',
-                    'Odkurzanie od 30 zł',
-                    'Sprzątanie bagażnika od 20 zł',
-                    'Suszenie od 30 zł'
+                    {item: 'Sam fotel – np. kierowcy', price: 'od 40 zł'},
+                    {item: 'Dwa fotele lub kanapa tylna', price: 'od 60 zł'},
+                    {item: 'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem)', price: 'od 120 zł'},
+                    // {item: 'Podsufitka + mycie szyb od wewnątrz', price: 'od 60 zł'},
+                    {item: 'Odkurzanie', price: 'od 30 zł'},
+                    {item: 'Sprzątanie bagażnika', price: 'od 20 zł'},
+                    {item: 'Suszenie', price: 'od 30 zł'},
+
+                    // 'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
+                    // 'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
+                    // 'Suszenie - Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!',
+                    
                 ],
-                time: 'Czas prania i suszenia to około od 3 do 5 godzin w zależności od wielkości pojazdu i stopnia zabrudzenia.',
-                info1: '',
-                price: '',
+                time: 'Czas prania i suszenia to około od 2 do 5 godzin w zależności od wielkości pojazdu i stopnia zabrudzenia.',
+                info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem dogodnego terminu.',
+                price: 'Podane ceny są cenami orientacyjnymi. Dokładną cenę poznają Państwo po oględzinach przed rozpoczęciem prania.',
                 ifno2: ''
             },
 
@@ -215,23 +227,6 @@ export default {
                 id: 4, img: '../../static/img/wypozyczalnia-karcher.jpg',
                 title: 'Wypożyczalnia Karcher',
             },
-
-            // {
-            //     id: 5, img: '../../static/img/dostawczy.jpg',
-            //     title: 'Dojazd do klienta',
-            //     subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
-            //     description: '',
-            //     subDescription: '',
-            //     offertCaption: '',
-            //     offertList: [
-            //         'Do 15km - 10zł',
-            //         'Powyżej 15km - cena do uzgodnienia.'
-            //     ],
-            //     time: '',
-            //     info1: '',
-            //     price: '',
-            //     ifno2: ''
-            // },
         ]
     }
   },

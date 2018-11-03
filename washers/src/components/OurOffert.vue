@@ -199,9 +199,9 @@ export default {
                 subDescription: 'Korzystając z naszych usług prania tapicerki samochodowej zapewnisz sobie komfort jazdy a zaoszczędzony dzięki temu czas możesz miło spędzić z najbliższymi!',
                 offertCaption: 'Etapy prania tapicerki samochodowej:',
                 offertInfo: [
-                    {id: 1, title: 'Odkurzanie', description: 'Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach, boczki oraz podłogę samochodu.'},
-                    {id: 2, title: 'Pranie', description: 'Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.'},
-                    {id: 3, title: 'Suszenie', description: 'Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!'}
+                    {id: 1, title: '1. Odkurzanie', description: 'Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach, boczki oraz podłogę samochodu.'},
+                    {id: 2, title: '2. Pranie', description: 'Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.'},
+                    {id: 3, title: '3. Suszenie', description: 'Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!'}
                 ],
                 offertList: [
                     {item: 'Sam fotel – np. kierowcy', price: 'od 40 zł'},
@@ -422,6 +422,7 @@ export default {
             }
             &--etaps{
                 font-size: 1.2rem;
+                list-style-type: none;
             }
             &__title{
                 font-size: 1.7rem;
@@ -441,6 +442,12 @@ export default {
                         width: 40%;
                         display: flex;
                         justify-content: space-between;
+                    }
+                }
+                &--etaps{
+                    p{
+                        font-size: 1.5rem;
+                        padding: .5rem 0;
                     }
                 }
             }

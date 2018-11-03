@@ -81,7 +81,7 @@ export default {
         case 'about-us':
           // this.$router.push('/O-nas');
           $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about-us").offset().top
+            scrollTop: $("#about-us").offset().top-65
           }, 1000);
           $('.list__item--menu:nth-child(2)').css(activeMenuStyle);
         break;
@@ -89,7 +89,7 @@ export default {
         case 'offert':
           // this.$router.push('/Oferta');
           $([document.documentElement, document.body]).animate({
-            scrollTop: $("#our-offert").offset().top
+            scrollTop: $("#our-offert").offset().top-65
           }, 1000);
           $('.list__item--menu:nth-child(3)').css(activeMenuStyle);
         break;
@@ -97,7 +97,7 @@ export default {
         case 'price-list':
           // this.$router.push('/Cennik');
           $([document.documentElement, document.body]).animate({
-            scrollTop: $("#price-list").offset().top
+            scrollTop: $("#price-list").offset().top-65
           }, 1000);
           $('.list__item--menu:nth-child(4)').css(activeMenuStyle);
         break;
@@ -105,7 +105,7 @@ export default {
         case 'contact':
           // this.$router.push('/Kontakt');
           $([document.documentElement, document.body]).animate({
-            scrollTop: $("#contact").offset().top
+            scrollTop: $("#contact").offset().top-65
           }, 1000);
           $('.list__item--menu:nth-child(5)').css(activeMenuStyle);
         break;

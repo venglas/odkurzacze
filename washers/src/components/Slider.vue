@@ -17,7 +17,7 @@
       </div> -->
 
       <div v-for="item in offert" v-bind:style="{backgroundImage: 'url('+item.img+')'}" style="background-size: cover; background-position: center" class="slider__item">
-        <p class="title">{{ item.description }}</p>
+        <!-- <p class="title">{{ item.description }}</p> -->
         <!-- <img :src="item.img" class="img"> -->
       </div>
   </div>

@@ -11,7 +11,7 @@
             <h2 class="animation-1">Jesteśmy niewielką firmą podchodzącą do każdego zlecenia niezwykle poważnie i profesjonalnie.</h2>
             <h2 class="animation-2">Specjalizujemy się w zakresie czyszczenia, prania dywanów, wykładzin, tapicerki meblowej oraz samochodowej, a także mycia kostki brukowej i elewacji.</h2>
             <h2 class="animation-3">Dysponujemy wyłącznie sprzętem renomowanej firmy Karcher i stosujemy tylko oryginalną chemię czyszczącą. Większość naszych klientów pochodzi z poleceń.</h2>
-            <h2 class="animation-4">Nasza firma nie jest płatnikiem podatku VAT</h2>
+            <h2 class="animation-4">Nasza firma nie jest płatnikiem podatku VAT.</h2>
         </div>
     </div>
       

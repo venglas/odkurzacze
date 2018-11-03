@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       title: 'Dojazd do klienta',
-      subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
+      // subtitle: 'Dojazd do klienta na terenie Knurowa Gratis.',
       info: [
         'Do 15 km gratis',
         'Powyżej 15 km - cena do uzgodnienia.'
@@ -73,7 +73,7 @@ export default {
       font-size: 1.8rem;
     }
     .list{
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-left: 2rem;
       text-align: left;
       padding-top: 1rem;

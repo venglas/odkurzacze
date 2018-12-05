@@ -325,7 +325,7 @@ export default {
                 }
             }
             @media(max-width: 1024px){
-                width: calc(20% - 4rem);
+                width: calc(25% - 4rem);
             }
             @media(max-width: 768px){
                 width: calc(80% - 4rem);
@@ -347,7 +347,7 @@ export default {
         }
         .item-title{
             position: absolute;
-            top: 50%;
+            top: 80%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 999;
@@ -368,6 +368,9 @@ export default {
                 font-size: 0;
                 opacity: 0;
                 padding: 0;
+                @media(max-width: 1024px){
+                    font-size: 1.2rem !important;
+                }
             }
         }
     }

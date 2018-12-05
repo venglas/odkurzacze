@@ -12,9 +12,7 @@
         <li class="list__item list__item--menu" @click="goTo('start')"> <span>Start</span></li>
         <li class="list__item list__item--menu" @click="goTo('about-us')"> <span>O firmie</span></li>
         <li class="list__item list__item--menu" @click="goTo('offert')"> <span>Oferta i Cennik</span></li>
-        <!-- <li class="list__item list__item--menu" @click="goTo('price-list')"> <span>Cennik</span></li> -->
         <li class="list__item list__item--menu" @click="goTo('contact')"> <span>Kontakt</span></li>
-        <!-- <li class="list__item list__item--menu" @click="goTo('gallery')"> <span>galeria</span></li> -->
         <li class="list__item list__item--menu"> <a href="https://www.facebook.com/Odkurza-Czary-274633909844583/?modal=admin_todo_tour" target="_blank"><span><img src="../../static/img/icons/facebook-original.png" alt="facebook" class="fb-icon"></span></a></li>
       </ul>
     </nav>
@@ -75,44 +73,30 @@ export default {
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#app").offset().top
           }, 1000);
-          $('.list__item--menu:nth-child(1)').css(activeMenuStyle);
         break;
 
         case 'about-us':
-          // this.$router.push('/O-nas');
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#about-us").offset().top-65
           }, 1000);
-          $('.list__item--menu:nth-child(2)').css(activeMenuStyle);
         break;
 
         case 'offert':
-          // this.$router.push('/Oferta');
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#our-offert").offset().top-65
           }, 1000);
-          $('.list__item--menu:nth-child(3)').css(activeMenuStyle);
         break;
 
         case 'price-list':
-          // this.$router.push('/Cennik');
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#price-list").offset().top-65
           }, 1000);
-          $('.list__item--menu:nth-child(4)').css(activeMenuStyle);
         break;
 
         case 'contact':
-          // this.$router.push('/Kontakt');
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#contact").offset().top-65
           }, 1000);
-          $('.list__item--menu:nth-child(5)').css(activeMenuStyle);
-        break;
-
-        case 'gallery':
-          this.$router.push('/Galeria');
-          $('.list__item--menu:nth-child(6)').css(activeMenuStyle);
         break;
       }
 
@@ -125,6 +109,45 @@ export default {
         this.isOpen = false;
       }
     }
+  },
+
+  mounted(){
+    let acitveMenuItem = {
+      fontSize: '1.7rem', 
+      fontWeight: '600',
+      textShadow: '0 0 35px rgba(0, 0, 0, .5)',
+      textDecoration: 'underline'
+    }
+
+    let unactiveMenuItemem = {
+      fontSize: '1.5rem',
+      fontWeight: '400',
+      textShadow: 'none',
+      textDecoration: 'none'
+    }
+
+    window.addEventListener('scroll', ()=>{
+      let position = window.scrollY;
+      
+      if(position < 533){
+        $('.list__item--menu').css(unactiveMenuItemem)
+      }
+
+      if(position >= 533){
+        $('.list__item--menu').css(unactiveMenuItemem)
+        $('.list__item--menu:nth-child(2)').css(acitveMenuItem)
+      }
+
+      if(position >= 995){
+        $('.list__item--menu').css(unactiveMenuItemem)
+        $('.list__item--menu:nth-child(3)').css(acitveMenuItem)
+      }
+
+      if(position >= 7901){
+        $('.list__item--menu').css(unactiveMenuItemem)
+        $('.list__item--menu:nth-child(4)').css(acitveMenuItem)
+      }
+    })
   }
 }
 </script>
@@ -132,7 +155,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .header {
-    // height: 8rem;
     position: sticky;
     top: 0;
     padding: 2.5rem 2rem;

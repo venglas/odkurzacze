@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="isOn">
     <Header></Header>
     
     <transition name="fade">
@@ -37,7 +37,40 @@ export default {
     Contact
   },
   data (){
-    return{}
+    return{
+      isOn: true
+    }
+  },
+  created(){
+    let time = new Date;
+    console.log("elo")
+    console.log(`${time.getFullYear()} / ${time.getMonth()} / ${time.getDate()} `);
+    
+  },
+  mounted(){
+    let time = new Date;
+
+    if(time.getFullYear() >= 2019){
+
+      if(time.getFullYear() > 2019){
+        this.isOn = false;
+      }
+
+      if(time.getMonth() == 4 ){
+        console.log(':)')
+        if(time.getDate() > 13) {
+          this.isOn = false;
+        }
+      }
+
+      if(time.getMonth() < 4){
+        this.isOn = false;
+      }
+      
+      if(time.getMonth() > 4 ){
+        this.isOn = false;
+      }
+    }
   }
 }
 </script>

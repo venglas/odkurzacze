@@ -53,7 +53,7 @@
                 <ul class="list" v-if="singleOffert.offertList">
                     <h2 class="list__title">Cennik:</h2>
                     <li class="list__item" v-for="listItem in singleOffert.offertList">
-                       <p style="width: 60%; display: flex; justify-content: space-between;">
+                       <p class="list__item--list">
                            <span>{{ listItem.item}} </span> <span> {{ listItem.price }}</span>
                        </p>
                     </li>
@@ -393,7 +393,7 @@ export default {
             font-size: 4rem;
             text-shadow: 0 0 30px rgba(0, 0, 0, .5);
             @media(max-width: 425px){
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
         }
     }
@@ -448,12 +448,23 @@ export default {
                         width: 40%;
                         display: flex;
                         justify-content: space-between;
+                        @media(max-width: 425px){
+                            width: 100%;
+                        }
                     }
                 }
                 &--etaps{
                     p{
                         font-size: 1.5rem;
                         padding: .5rem 0;
+                    }
+                }
+                &--list{
+                    width: 60%;
+                    display: flex;
+                    justify-content: space-between;
+                    @media(max-width: 425px){
+                        width: 100%;
                     }
                 }
             }

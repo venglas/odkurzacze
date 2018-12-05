@@ -62,11 +62,15 @@ export default {
     justify-content: center;
     position: relative;
 
+    @media(max-width: 425px){
+        padding: 0 2rem 5rem 2rem;
+    }
+
     &__img{
         max-width: 25%;
         opacity: 0;
         @include animation-text(1000ms);
-        
+
         @media(max-width: 768px){
             display: none;
         }
@@ -77,6 +81,9 @@ export default {
         letter-spacing: 2px;
         text-align: left;
         padding-left: 4rem;
+        @media(max-width: 768px){
+            padding-left: 0;
+        }
         h1, h2{
             // color: #fff;
             color: $yellow;

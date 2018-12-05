@@ -59,6 +59,9 @@ export default {
 
   .img{
     height: 100%;
+    @media(max-width: 425px){
+      display: none;
+    }
   }
   .content{
     position: absolute;

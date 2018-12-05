@@ -394,6 +394,7 @@ export default {
             text-shadow: 0 0 30px rgba(0, 0, 0, .5);
             @media(max-width: 425px){
                 font-size: 2.2rem;
+                white-space: normal;
             }
         }
     }

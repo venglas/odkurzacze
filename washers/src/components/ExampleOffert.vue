@@ -277,7 +277,7 @@ export default {
                         @media(max-width: 425px){
                             margin-left: 2rem;
                         }
-                        
+
                         &--basic{
                             text-shadow: none;
                         }

@@ -64,9 +64,11 @@ export default {
     }
   }
   .content{
-    position: absolute;
-    top: 10%;
-    right: 5%;
+    @media(min-width: 768px){
+      position: absolute;
+      top: 10%;
+      right: 5%;
+    }
 
     &__title{
       font-size: 3rem;
@@ -80,6 +82,10 @@ export default {
       margin-left: 2rem;
       text-align: left;
       padding-top: 1rem;
+      @media(max-width: 425px){
+        list-style-type: none;
+        text-align: center;
+      }
     }
   }
 }

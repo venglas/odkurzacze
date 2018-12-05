@@ -103,6 +103,9 @@ export default {
             @media(max-width: 768px){
                 width: 100%;
             }
+            @media(max-width: 425px){
+                height: 33.33vh;
+            }
         }
         
         .firm{

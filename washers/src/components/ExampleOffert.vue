@@ -265,10 +265,19 @@ export default {
                 }
                 .list{
                     padding-bottom: 3rem;
+                    
+                    @media(max-width: 425px){
+                        text-align: left;
+                    }
+
                     &__item{
                         font-weight: 400 !important;
                         text-decoration: none !important;
                         font-size: 1.35rem !important;
+                        @media(max-width: 425px){
+                            margin-left: 2rem;
+                        }
+                        
                         &--basic{
                             text-shadow: none;
                         }

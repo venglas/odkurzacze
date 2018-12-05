@@ -14,12 +14,6 @@
             <div class="about-item-section">
                 <p class="about-item-section__description">
                     <h3 class="description-title">{{ item.description }}</h3>
-                    <!-- ZASTOSOWANIE -->
-                    <!-- <ul>
-                        <li v-for="points in item.list">
-                            {{points}}
-                        </li>
-                    </ul> -->
                 </p>
 
                 <p class="about-item-section__prices">

@@ -328,7 +328,7 @@ export default {
                 width: calc(25% - 4rem);
             }
             @media(max-width: 768px){
-                width: calc(80% - 4rem);
+                width: calc(65% - 4rem);
                 margin: 2rem auto;
                 display: block;
                 height: fit-content;
@@ -361,6 +361,9 @@ export default {
                 text-align: center;
                 @media(max-width: 1440px){
                     font-size: 1rem;
+                }
+                @media(max-width: 768px){
+                    font-size: 1.5rem;
                 }
             }
             .info{

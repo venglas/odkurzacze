@@ -282,6 +282,9 @@ export default {
                     width: 55%;
                     text-align: left;
                     padding-bottom: 3rem;
+                    @media(max-width: 768px){
+                        width: 100%;
+                    }
                     @media(max-width: 425px){
                         width: 95%;
                         margin: 0 auto;
@@ -304,6 +307,7 @@ export default {
                             td{
                                 display: block;
                                 font-size: 1.35rem;
+                                padding-bottom: .5rem;
                             }
                         }
                     }

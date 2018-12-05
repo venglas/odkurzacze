@@ -23,12 +23,6 @@ export default {
   name: 'AboutUs',
   data () {
     return {}
-  },
-  mounted(){
-    // $('.content__img')[0].className += ' carAnimation';
-  },
-  destroyed(){
-    // $('.content__img')[0].classList.remove('carAnimation');
   }
 }
 </script>
@@ -66,11 +60,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     &__img{
         max-width: 25%;
         opacity: 0;
         @include animation-text(1000ms);
+        
+        @media(max-width: 768px){
+            display: none;
+        }
     }
 
     &__content{

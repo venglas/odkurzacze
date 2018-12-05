@@ -79,10 +79,17 @@ export default {
     justify-content: center;
     text-align: left;
 
+    @media(max-width: 768px){
+        text-align: center;
+    }
+
     &__content{
         line-height: 2;
         letter-spacing: 2px;
         display: flex;
+        @media(max-width: 768px){
+            display: block;
+        }
         
         .about-us__content-wrapper{
             width: 65%;
@@ -93,6 +100,9 @@ export default {
         }
         .map{
             width: 35%;
+            @media(max-width: 768px){
+                width: 100%;
+            }
         }
         
         .firm{

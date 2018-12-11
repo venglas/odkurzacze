@@ -15,8 +15,8 @@ import Header from './components/Header'
 import BottomSection from './components/BottomSection'
 import Slider from './components/Slider'
 import Start from './views/Start'
-import AboutUs from './views/AboutUs'
-import Contact from './views/Contact'
+import AboutUs from './components/AboutUs'
+import Contact from './components/Contact'
 
 export default {
   name: 'App',

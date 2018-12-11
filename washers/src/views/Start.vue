@@ -19,15 +19,15 @@
 
 <script>
 import Slider from '../components/Slider'
+import AboutUs from '../components/AboutUs'
 import OurOffert from '../components/OurOffert'
 import ExampleOffert from '../components/ExampleOffert'
 import BottomSection from '../components/BottomSection'
-import AboutUs from './AboutUs'
-import Contact from './Contact'
+import Contact from '../components/Contact'
 
 export default {
   name: 'Start',
-  components: {Slider, OurOffert, ExampleOffert, BottomSection, AboutUs, Contact},
+  components: {Slider, AboutUs, OurOffert, ExampleOffert, BottomSection, Contact},
 
   data () {
     return {}

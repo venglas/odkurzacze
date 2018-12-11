@@ -2,12 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Start from '@/views/Start'
-import AboutUs from '@/views/AboutUs'
-import OurOffert from '../components/OurOffert'
-import PriceList from '@/views/PriceList'
-import Contact from '@/views/Contact'
 import VueRouter from 'vue-router'
-
 
 Vue.use(Router)
 

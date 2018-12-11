@@ -19,7 +19,6 @@
                 <h1 class="title">
                     {{ singleOffert.title }}
                 </h1>
-                <!-- <img class="img" :src="singleOffert.img" alt=""> -->
             </div>
 
             <div class="offert__box">
@@ -28,7 +27,6 @@
                 </h2>
 
                 <h4 class="description" v-html="singleOffert.description">
-                    <!-- {{singleOffert.description }} -->
                 </h4>
 
                 <h4 class="subdescription">
@@ -161,7 +159,6 @@ export default {
                 title: 'Czyszczenie tapicerki meblowej',
                 subtitle: 'Wypoczynek i relaks!',
                 description: 'Miękka, pachnąca i czysta sofa albo fotel to gwarancja relaksu po ciężkim dniu. Zadbamy o Wasz wypoczynek, zapraszamy do skorzystania z naszej oferty czyszczenia tapicerki meblowej. <br /> <br /> Cena zależy od wielkości mebla oraz od rodzaju i stopnia zabrudzenia. <br /> <br /> Na proces czyszczenia składa się:',
-                // subDescription: ['Faza odplamiania specjalnymi, dostosowanymi do plam środkami', 'Pranie zasadnicze odkurzaczem ekstrakcyjnym', 'Proces płukania gwarantujący usunięcie resztek zabrudzenia'],
                 etaps: ['Faza odplamiania specjalnymi, dostosowanymi do plam środkami', 'Pranie zasadnicze odkurzaczem ekstrakcyjnym', 'Proces płukania gwarantujący usunięcie resztek zabrudzenia'],
                 offertCaption: 'Cennik prania dywanów i wykładzin:',
                 offertList: [
@@ -177,8 +174,7 @@ export default {
 
                     {item: 'Kanapy III osobowe', price: 'od 140 zł'},
                     {item: 'Kanapy (narożniki) IV osobowe', price: 'od 150 zł'},
-                    {item: 'Kanapy (narożniki) V osobowe', price: 'od 180 zł'},
-                    // {item: 'Przy większej ilości elementów pranych jednorazowo możliwa jest negocjacja ceny.', price: ''},
+                    {item: 'Kanapy (narożniki) V osobowe', price: 'od 180 zł'}
                 ],
                 iconTime: '../../static/img/icons/time-icon.png',
                 iconOrder: '../../static/img/icons/order-icon.png',
@@ -207,15 +203,9 @@ export default {
                     {item: 'Sam fotel – np. kierowcy', price: 'od 40 zł'},
                     {item: 'Dwa fotele lub kanapa tylna', price: 'od 60 zł'},
                     {item: 'Dwa fotele + kanapa tylna (z zagłówkami i podłokietnikiem)', price: 'od 120 zł'},
-                    // {item: 'Podsufitka + mycie szyb od wewnątrz', price: 'od 60 zł'},
                     {item: 'Odkurzanie', price: 'od 30 zł'},
                     {item: 'Sprzątanie bagażnika', price: 'od 20 zł'},
-                    {item: 'Suszenie', price: 'od 30 zł'},
-
-                    // 'Odkurzanie - Odkurzamy wszystko najdokładniej jak można, każdą szczelinę, zagłębienie w fotelach. Dobrze odkurzony samochód usprawni proces prania oraz',
-                    // 'Pranie - Działamy etapami, po jednym elemencie. Zaczynamy od fotela kierowcy, potem przechodzimy na tył, następnie fotel pasażera, wykładziny, bagażnik i boczki drzwiowe.',
-                    // 'Suszenie - Po skończonym praniu suszymy auto. Po wysuszeniu sprawdzamy czy wszystko jest w porządku. Jeżeli nie jesteśmy zadowoleni z końcowego efektu naszej pracy, czyścimy i poprawiamy aż do skutku!',
-                    
+                    {item: 'Suszenie', price: 'od 30 zł'}
                 ],
                 time: 'Czas prania i suszenia to około od 2 do 5 godzin w zależności od wielkości pojazdu i stopnia zabrudzenia.',
                 info1: 'Szybka realizacja zamówienia, po indywidualnym ustaleniu z Klientem dogodnego terminu.',
@@ -269,7 +259,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import '../assets/scss/variables';
 
@@ -288,7 +277,6 @@ export default {
     .offert-box{
         margin: 3rem auto;
         white-space: nowrap;
-        // height: 100%;
         width: 80%;
         margin: 0 auto;
         @media(max-width: 1024px){
@@ -470,14 +458,7 @@ export default {
                 }
             }
         }
-        // .price-info, .time-info, .order-info{
-        //     .img{
-        //         display: inline-block;
-        //     }
-        //     &__content{
-        //         display: inline-block;
-        //     }
-        // }
+       
         .info{
             padding: 1.5rem 0;
             .img{
@@ -493,7 +474,5 @@ export default {
             }
         }
     }
-
 }
-
 </style>

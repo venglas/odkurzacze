@@ -1,24 +1,14 @@
 <template>
 <div v-if="!isLoaded">
 
-  <!-- <div class="contact-modal">
-
-  </div> -->
-
   <div class="phone-number">
     <img src="../../static/img/icons/phone-contact.png" alt="">
     <a href="tel:694045198">694-045-198</a>
   </div>
 
   <div class="slider" id="slider1">
-      <!-- <div v-for="item in offert" class="slider__item">
-        <p class="title">{{ item.description }}</p>
-        <img :src="item.img" class="img">
-      </div> -->
 
       <div v-for="item in offert" v-bind:style="{backgroundImage: 'url('+item.img+')'}" style="background-size: cover; background-position: center" class="slider__item">
-        <!-- <p class="title">{{ item.description }}</p> -->
-        <!-- <img :src="item.img" class="img"> -->
       </div>
   </div>
 
@@ -33,11 +23,7 @@ export default {
     return {
       offert: [
         {id: 1, img: '../../static/img/slider/slide2.png', description: 'description of an item!'},
-        {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'},
-
-        // {id: 1, img: '../../static/img/slider/slider1.jpg', description: 'description of an item'},
-        // {id: 2, img: '../../static/img/slider/slider2.jpg', description: 'description of an item'},
-        // {id: 3, img: '../../static/img/slider/slider3.jpg', description: 'description of an item'},
+        {id: 2, img: '../../static/img/slider/slide3.png', description: 'description of an item!'}
       ],
       isLoaded: false,
       sliderData: {},
@@ -51,6 +37,7 @@ export default {
       scope.sliderData = response.data.data;
       scope.isLoaded = true;
       
+      // For API loading images
       // if(scope.isLoaded === true){
 
       //   setTimeout(() => {
@@ -82,7 +69,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .phone-number{
     position: absolute;
@@ -121,7 +107,6 @@ export default {
         padding: 1rem 2rem;
         font-size: 1.5rem;
         font-weight: 600;
-        // clip-path: polygon(0 0, 75% 0); // do it in next part of styling
       }
       .img{
         max-height: 100%;

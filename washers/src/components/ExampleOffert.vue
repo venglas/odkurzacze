@@ -6,7 +6,7 @@
         <div class="slider" id="slider2">
             <div class="section-content" v-for="offert in exampleOffertData">
                 <div class="section-content__header">
-                    <!-- <h2 class="title">{{ offert.title }}</h2> -->
+
                     <img :src="offert.img" alt="" class="img">
 
                     <h2 style="padding-top: 2rem; text-align: center">{{offert.secondImgTitle}}</h2>
@@ -194,13 +194,11 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import '../assets/scss/variables';
 
 .example-offert{
     width: 100%;
-    // height: 100vh;
     margin: 0 auto;
     background-color: #fff;
     padding: 8rem 3rem;
@@ -228,8 +226,6 @@ export default {
                     display: block;
                     width: 100%;
                 }
-
-                .title{}
                 
                 .img{
                     max-width: 100%;

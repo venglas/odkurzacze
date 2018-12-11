@@ -100,7 +100,6 @@ export default {
         break;
       }
 
-      //You can it better bro I believe
       if(window.innerWidth < 425){
         $('.list').css({height: '0'});
         $('.logo-img').css({width: '12rem'});
@@ -152,7 +151,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .header {
     position: sticky;

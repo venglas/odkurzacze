@@ -6,7 +6,6 @@ import AboutUs from '@/views/AboutUs'
 import Offert from '@/views/Offert'
 import PriceList from '@/views/PriceList'
 import Contact from '@/views/Contact'
-import Gallery from '@/views/Gallery'
 import VueRouter from 'vue-router';
 
 
@@ -48,12 +47,6 @@ export default new Router({
       path: '/Kontakt',
       name: 'Contact',
       component: Contact
-    },
-
-    {
-      path: '/Galeria',
-      name: 'Gallery',
-      component: Gallery
     }
   ]
 })

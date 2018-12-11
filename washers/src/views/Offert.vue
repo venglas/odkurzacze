@@ -52,16 +52,12 @@ export default {
         ]
     }
   },
-  mounted(){
-    // $('.content__img')[0].className += ' carAnimation';
-  },
-  destroyed(){
-    // $('.content__img')[0].classList.remove('carAnimation');
-  }
+
+  mounted(){},
+  destroyed(){}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import '../assets/scss/variables';
 
@@ -101,7 +97,7 @@ export default {
         }
         .list{
             list-style-type: dots;
-            margin-left: 2rem; //for test
+            margin-left: 2rem;
             font-size: 1.4rem;
             &__item{
                 padding: 1.5rem 0 0 0;

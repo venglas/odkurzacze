@@ -1,8 +1,6 @@
 <template>
   <div class="" id="about-us">
 
-    <!-- <h1 class="about-us-title">O Firmie</h1> -->
-
     <div class="about-us">
         <img src="../../static/img/icons/logo.png" alt="" class="about-us__img">
 
@@ -27,7 +25,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import '../assets/scss/variables';
 
@@ -85,7 +82,6 @@ export default {
             padding-left: 0;
         }
         h1, h2{
-            // color: #fff;
             color: $yellow;
             opacity: 0;
         }

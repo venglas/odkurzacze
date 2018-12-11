@@ -28,21 +28,21 @@ import Contact from './Contact'
 export default {
   name: 'Start',
   components: {Slider, OurOffert, ExampleOffert, BottomSection, AboutUs, Contact},
+
   data () {
     return {}
   },
+
   mounted(){
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#app").offset().top
     }, 1000);
   },
-  watch(){
-    console.log(window.pageYOffset)
-  }
+
+  watch(){}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .section-under{
   display: flex;

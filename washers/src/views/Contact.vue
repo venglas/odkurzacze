@@ -59,7 +59,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import '../assets/scss/variables';
 
@@ -114,17 +113,12 @@ export default {
             }
         }
         h1, h2{
-            // color: #fff;
             color: $yellow;
             opacity: 0;
         }
         h1{
             font-size: 3rem;
             @include animation-text(400ms);
-
-            @media(max-width: 1440px){
-                // font-size: 3.5rem;
-            }
         }
         h2{
             font-size: 3rem;

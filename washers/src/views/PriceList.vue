@@ -70,7 +70,7 @@ export default {
                 ]
             },
 
-            { // this element should be comared with myjka k5 
+            {
                 id: 2, img: '../../static/img/pianownica-do-myjki.jpg',
                 title: 'PIANOWNICĘ DO MYJKI KARCGER K5',
                 description: '',
@@ -161,7 +161,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import '../assets/scss/variables';
 

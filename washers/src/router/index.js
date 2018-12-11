@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 import Start from '@/views/Start'
 import AboutUs from '@/views/AboutUs'
-import Offert from '@/views/Offert'
+import OurOffert from '../components/OurOffert'
 import PriceList from '@/views/PriceList'
 import Contact from '@/views/Contact'
-import VueRouter from 'vue-router';
+import VueRouter from 'vue-router'
 
 
 Vue.use(Router)
@@ -23,30 +23,6 @@ export default new Router({
       path: '/',
       name: 'Start',
       component: Start
-    },
-
-    {
-      path: '/O-nas',
-      name: 'AboutUs',
-      component: AboutUs
-    },
-
-    {
-      path: '/Oferta',
-      name: 'Offert',
-      component: Offert
-    },
-
-    {
-      path: '/Cennik',
-      name: 'PriceList',
-      component: PriceList
-    },
-
-    {
-      path: '/Kontakt',
-      name: 'Contact',
-      component: Contact
     }
   ]
-})
+});

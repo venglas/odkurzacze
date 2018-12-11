@@ -6,14 +6,6 @@
       <router-view/>
     </transition>
 
-    <!-- this components should be in one other view for example start that I can add other route for gallery view -->
-    <!-- <Slider></Slider>
-    <AboutUs></AboutUs>
-    <Start></Start>
-    <Contact></Contact> -->
-
-
-
     <BottomSection></BottomSection>
   </div>
 </template>
@@ -43,10 +35,8 @@ export default {
   },
   created(){
     let time = new Date;
-    console.log("elo")
-    console.log(`${time.getFullYear()} / ${time.getMonth()} / ${time.getDate()} `);
-    
   },
+
   mounted(){
     let time = new Date;
 
@@ -57,7 +47,6 @@ export default {
       }
 
       if(time.getMonth() == 4 ){
-        console.log(':)')
         if(time.getDate() > 13) {
           this.isOn = false;
         }

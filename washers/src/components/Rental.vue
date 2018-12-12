@@ -4,7 +4,7 @@
             Wypożyczalnia Karcher
         </h1>
         <div class="slider" id="slider2">
-            <div class="section-content" v-for="offert in exampleOffertData">
+            <div class="section-content" v-for="offert in RentalData">
                 <div class="section-content__header">
 
                     <img :src="offert.img" alt="" class="img">
@@ -69,7 +69,7 @@ export default {
   data () {
     return {
         isMobile: false,
-        exampleOffertData: [
+        RentalData: [
             {
                 id: 1, img: '../../static/img/odkurzacz-puzzi.jpg',
                 title: 'ODKURZACZ  PIORĄCY PUZZI  10/1',

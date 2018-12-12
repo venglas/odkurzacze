@@ -22,12 +22,12 @@ import Slider from '../components/Slider'
 import AboutUs from '../components/AboutUs'
 import OurOffert from '../components/OurOffert'
 import ExampleOffert from '../components/ExampleOffert'
-import BottomSection from '../components/BottomSection'
+import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 
 export default {
   name: 'Start',
-  components: {Slider, AboutUs, OurOffert, ExampleOffert, BottomSection, Contact},
+  components: {Slider, AboutUs, OurOffert, ExampleOffert, Footer, Contact},
 
   data () {
     return {}

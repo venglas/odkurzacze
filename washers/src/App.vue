@@ -6,13 +6,13 @@
       <router-view/>
     </transition>
 
-    <BottomSection></BottomSection>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
-import BottomSection from './components/BottomSection'
+import Footer from './components/Footer'
 import Slider from './components/Slider'
 import Start from './views/Start'
 import AboutUs from './components/AboutUs'
@@ -22,7 +22,7 @@ export default {
   name: 'App',
   components: {
     Header,
-    BottomSection,
+    Footer,
     Slider,
     Start,
     AboutUs,

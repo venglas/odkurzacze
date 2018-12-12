@@ -11,7 +11,7 @@
     </div>
 
     <OurOffert></OurOffert>
-    <ExampleOffert></ExampleOffert>
+    <Rental></Rental>
 
     <Contact></Contact>
   </div>
@@ -21,13 +21,13 @@
 import Slider from '../components/Slider'
 import AboutUs from '../components/AboutUs'
 import OurOffert from '../components/OurOffert'
-import ExampleOffert from '../components/ExampleOffert'
+import Rental from '../components/Rental'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 
 export default {
   name: 'Start',
-  components: {Slider, AboutUs, OurOffert, ExampleOffert, Footer, Contact},
+  components: {Slider, AboutUs, OurOffert, Rental, Footer, Contact},
 
   data () {
     return {}

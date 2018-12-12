@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: 'ExampleOffert',
+  name: 'Rental',
   data () {
     return {
         isMobile: false,
